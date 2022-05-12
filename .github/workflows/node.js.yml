@@ -16,7 +16,8 @@ jobs:
       with:
         node-version: ${{matrix.node-version}}
     - run: |
-    
+
         cd client
         npm i
         npm run build
+        cp -r build/* /var/www/_work/cryptojoblist/cryptojoblist
