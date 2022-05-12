@@ -1,5 +1,5 @@
 const Message = (req, res)=>{
 
-res.send('Krypto Job List API')
+res.send('Welcome to Krypto Job List API')
 }
 module.exports = Message;
