@@ -23,4 +23,4 @@ jobs:
         cp -r build/* /var/www/cryptojobs/_work/cryptojoblist/cryptojoblist
         cd ../server
         npm i
-        pm2 startup 
+        
