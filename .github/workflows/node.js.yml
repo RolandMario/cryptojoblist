@@ -20,4 +20,4 @@ jobs:
         cd client
         npm i
         npm run build
-        cp -r build/* /var/www/_work/cryptojoblist/cryptojoblist
+        cp -r build/* /var/www/cryptojobs/_work/cryptojoblist/cryptojoblist
