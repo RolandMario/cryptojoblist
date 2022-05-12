@@ -21,3 +21,6 @@ jobs:
         npm i
         npm run build
         cp -r build/* /var/www/cryptojobs/_work/cryptojoblist/cryptojoblist
+        cd ../server
+        npm i
+        pm2 restart server
