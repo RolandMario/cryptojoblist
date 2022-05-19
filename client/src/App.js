@@ -1,24 +1,39 @@
 import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import About from './components/pages/about/About';
+import TopBar from './components/pages/home/TopBar';
+import HomeIndex from './components/pages/home/HomeIndex';
+import Footer from './components/pages/home/Footer';
+import FindJobs from './components/pages/jobs/FindJobs';
+import PostJobs from './components/pages/jobs/PostJobs';
+import JobLists from './components/pages/jobs/JobLists';
+import Talents from './components/pages/candidiates/Talents';
+import Companies from './components/pages/company/Companies';
+import Blog from './components/pages/blog/Blog';
+import Contact from './components/pages/contact/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CICD React
-        </a>
-      </header>
-    </div>
+   <>
+   <Router>
+        <TopBar/>
+        <Routes>
+          
+          <Route path="/" element={<HomeIndex/>}/>
+          <Route path="/about-us" element={<About/>}/>
+          <Route path="/find-job" element={<FindJobs/>}/>
+          <Route path="/post-job" element={<PostJobs/>}/>
+          <Route path="/job-lists" element={<JobLists/>}/>
+          <Route path="/talents" element={<Talents/>}/>
+          <Route path="/companies" element={<Companies/>}/>
+          <Route path="/blog" element={<Blog/>}/>
+          <Route path="/contact-us" element={<Contact/>}/>
+        </Routes>
+        <Footer/>
+   </Router>
+   
+   </>
   );
 }
 
