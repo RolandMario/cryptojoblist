@@ -63,7 +63,7 @@ const AppliedJobs = () => {
                                 <a href="link" className data-dismiss="modal">cancel</a>
                               </div>
                               <div className="login_remember_box jb_cover">
-                                <label className="control control--checkbox">You accepts our <a href="link">Terms and Conditions </a> and <a href="#">Privacy Policy</a>
+                                <label className="control control--checkbox">You accepts our <a href="link">Terms and Conditions </a> and <a href="link">Privacy Policy</a>
                                   <input type="checkbox" />
                                   <span className="control__indicator" />
                                 </label>

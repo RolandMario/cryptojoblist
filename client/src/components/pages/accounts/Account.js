@@ -48,16 +48,16 @@ const Account = () => {
                     </div>
                     <ul>
                         <li>
-                        <a  className="active" onClick={()=>setAccountData("Dashboard")}>
+                        <p  className="active" onClick={()=>setAccountData("Dashboard")}>
                           <i className="bx bx-user" />
                           Dashboard
-                        </a>
+                        </p>
                       </li>
                       <li>
-                        <a href="link" onClick={()=>{setAccountData("Profile")}}>
+                        <p onClick={()=>{setAccountData("Profile")}}>
                           <i className="bx bx-user" />
                           My Profile
-                        </a>
+                        </p>
                       </li>
                       <li>
                         <Link to="/resume">
