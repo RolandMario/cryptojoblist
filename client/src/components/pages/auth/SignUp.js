@@ -1,7 +1,33 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { useFormik } from 'formik';
+import { useNavigate} from 'react-router-dom'
+import { WalletAddressContext } from '../../context/WalletAddressContext'
 
 const SignUp = () => {
+  const [walletAddress, ] = useContext(WalletAddressContext)
+
+  let navigate = useNavigate();
+
+  const formik = useFormik({
+      initialValues:{
+          username:"",
+          email: "",
+          password: ""
+      },
+      onSubmit: (values)=>{
+        try {
+           console.log("sign up details",values)
+            console.log(walletAddress)
+              navigate('/account')
+        } catch (error) {
+          console.log(error)
+        }
+           
+          
+      }
+  })
+
   return (
    <>
    <div>
@@ -30,18 +56,22 @@ const SignUp = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-6 col-md-8 offset-md-2 offset-lg-3">
-                  <form className="signup-form">
+                  <form onSubmit={formik.handleSubmit} className="signup-form">
+                    <div>
+                    <label>Wallet Address</label>
+                    <p>{walletAddress}</p>
+                    </div>
                     <div className="form-group">
                       <label>Enter Username</label>
-                      <input type="text" className="form-control" placeholder="Enter Username" required />
+                      <input type="text" name="username" value={formik.values.username} onChange={formik.handleChange} className="form-control" placeholder="Enter Username" required />
                     </div>
                     <div className="form-group">
                       <label>Enter Email</label>
-                      <input type="email" className="form-control" placeholder="Enter Your Email" required />
+                      <input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} className="form-control" placeholder="Enter Your Email" required />
                     </div>
                     <div className="form-group">
                       <label>Enter Password</label>
-                      <input type="password" className="form-control" placeholder="Enter Your Password" required />
+                      <input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} className="form-control" placeholder="Enter Your Password" required />
                     </div>
                     <div className="signup-btn text-center">
                       <button type="submit">Sign Up</button>

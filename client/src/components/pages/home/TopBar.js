@@ -1,9 +1,61 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React, {useEffect, useContext, useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import Web3 from 'web3'
+import { WalletAddressContext } from '../../context/WalletAddressContext'
 const TopBar = () => {
 
+ 
+const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+const [, setIsAddress] = useState(false)
+
+let navigate = useNavigate()
+  const walletConnect = async()=>{
+    try {
+      if (window.ethereum) {
+        const web3 = new Web3(window.ethereum);
+      
+          // Request account access if needed
+          await window.ethereum.enable();
+          // Acccounts now exposed
+          const accounts = await web3.eth.getAccounts();
+          console.log(accounts[0])
+          setWalletAddress(accounts[0]);
+        navigate("/sign-up")
+      }
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const signIn = async()=>{
+    try {
+      if (window.ethereum) {
+        const web3 = new Web3(window.ethereum);
+      
+          // Request account access if needed
+          await window.ethereum.enable();
+          // Acccounts now exposed
+          const accounts = await web3.eth.getAccounts();
+          console.log(accounts[0])
+          setWalletAddress(accounts[0]);
   
+          //verify address from the db using wallet address as the parameter
+          //if found
+        //navigate("/account")
+        //else: user not found sign up for new user
+      }
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+useEffect(() => {
+  if(walletAddress !== ""){
+    setIsAddress(true)
+  }
+    setIsAddress(false)
+ 
+}, [walletAddress])
 
  
   return (
@@ -77,9 +129,17 @@ const TopBar = () => {
                           </li>
                     </ul>
                     <div className="other-option">
-                      <Link to="/sign-up" className="signup-btn">Sign Up</Link>
-                      <Link to="/sign-in" className="signin-btn">Sign In</Link>
+                      <button  className="signup-btn" onClick={
+                        ()=>walletConnect()
+                        
+                        }>Sign Up</button>
+                      <button className="signin-btn"
+                      onClick={
+                        ()=>signIn()
+                      }
+                      >Sign In</button>
                     </div>
+                    {/* {isAddress?<p>wallet address</p>:<p></p>} */}
                   </div>
                 </nav>
               </div>
