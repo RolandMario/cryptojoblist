@@ -161,7 +161,7 @@ const FindJobs = () => {
                       <div className="col-lg-3">
                         <div className="thumb-img">
                           <a href="job-details.html">
-                            <img src="assets/img/company-logo/1.png" alt="company logo" />
+                            <img src="assets/img/company-logo/1.png" alt="company" />
                           </a>
                         </div>
                       </div>
@@ -190,7 +190,7 @@ const FindJobs = () => {
                       <div className="col-lg-3">
                         <div className="job-save">
                           <span>Full Time</span>
-                          <a href="#">
+                          <a href="/like">
                             <i className="bx bx-heart" />
                           </a>
                           <p>
@@ -236,7 +236,7 @@ const FindJobs = () => {
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <a href="#">
+                          <a href="/savejobs">
                             <i className="bx bx-heart" />
                           </a>
                           <p>
@@ -264,7 +264,7 @@ const FindJobs = () => {
                             <a href="job-details.html">Graphic Designer</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">Devon Design</a></li>
+                            <li>Via <a href="/link">Devon Design</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               West Sight, USA
@@ -282,7 +282,7 @@ const FindJobs = () => {
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <a href="#">
+                          <a href="/link">
                             <i className="bx bx-heart" />
                           </a>
                           <p>
@@ -310,7 +310,7 @@ const FindJobs = () => {
                             <a href="job-details.html">Web Developer</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">MegaNews</a></li>
+                            <li>Via <a href="/link">MegaNews</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               San Francisco, California
@@ -328,7 +328,7 @@ const FindJobs = () => {
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <a href="#">
+                          <a href="/link">
                             <i className="bx bx-heart" />
                           </a>
                           <p>
@@ -356,7 +356,7 @@ const FindJobs = () => {
                             <a href="job-details.html">Digital Marketor</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">AB Marketer LTD</a></li>
+                            <li>Via <a href="/link">AB Marketer LTD</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               Wellesley Rd, London
@@ -374,7 +374,7 @@ const FindJobs = () => {
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <a href="#">
+                          <a href="/link">
                             <i className="bx bx-heart" />
                           </a>
                           <p>
@@ -402,7 +402,7 @@ const FindJobs = () => {
                             <a href="job-details.html">UI/UX Designer</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">Design Hunter</a></li>
+                            <li>Via <a href="link">Design Hunter</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               Zoo Rd, London
@@ -420,7 +420,7 @@ const FindJobs = () => {
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <a href="#">
+                          <a href="link">
                             <i className="bx bx-heart" />
                           </a>
                           <p>

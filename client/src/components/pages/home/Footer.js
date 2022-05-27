@@ -15,10 +15,10 @@ const Footer = () => {
                      </div>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna. Sed eiusmod tempor incididunt ut.</p>
                      <div className="footer-social">
-                       <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                       <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                       <a href="#" target="_blank"><i className="bx bxl-pinterest-alt" /></a>
-                       <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>
+                       <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                       <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                       <a href="link" target="_blank"><i className="bx bxl-pinterest-alt" /></a>
+                       <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>
                      </div>
                    </div>
                  </div>
@@ -144,7 +144,7 @@ const Footer = () => {
              </div>
            </footer>
            <div className="copyright-text text-center">
-             <p>Copyright @2021 Jovie. All Rights Reserved By <a href="https://hibootstrap.com/" target="_blank">HiBootstrp.com</a></p>
+             <p>Copyright @2021 Jovie. All Rights Reserved By <a href="https://hibootstrap.com/" target="_blank" rel="noreferrer">HiBootstrp.com</a></p>
            </div>
     </>
   )

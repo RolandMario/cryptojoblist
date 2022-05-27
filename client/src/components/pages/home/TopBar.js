@@ -1,6 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+
 const TopBar = () => {
+
+  let navigate = useNavigate();
+
+  const walletConnect = ()=>{
+    
+  }
   return (
     <>
     <div className="navbar-area">
@@ -26,7 +33,7 @@ const TopBar = () => {
                         <Link to="about-us" className="nav-link">About</Link>
                       </li>
                       <li className="nav-item">
-                        <a href="#" className="nav-link dropdown-toggle">Jobs</a>
+                        <a href="link" className="nav-link dropdown-toggle">Jobs</a>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/find-job" className="nav-link">Find A Job</Link>
@@ -41,7 +48,7 @@ const TopBar = () => {
                         </ul>
                       </li>                
                       <li className="nav-item">
-                        <a href="#" className="nav-link dropdown-toggle">Talents</a>
+                        <a href="link" className="nav-link dropdown-toggle">Talents</a>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/talents" className="nav-link">Browse Talents</Link>
@@ -50,7 +57,7 @@ const TopBar = () => {
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a href="#" className="nav-link dropdown-toggle">Companies</a>
+                        <a href="link" className="nav-link dropdown-toggle">Companies</a>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/companies" className="nav-link">Browse Companies</Link>
@@ -59,7 +66,7 @@ const TopBar = () => {
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a href="#" className="nav-link dropdown-toggle">Blog</a>
+                        <a href="link" className="nav-link dropdown-toggle">Blog</a>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/blog" className="nav-link">Crypto News</Link>
@@ -72,8 +79,8 @@ const TopBar = () => {
                           </li>
                     </ul>
                     <div className="other-option">
-                      <a href="sign-up.html" className="signup-btn">Sign Up</a>
-                      <a href="sign-in.html" className="signin-btn">Sign In</a>
+                      <Link to="/sign-up" className="signup-btn">Sign Up</Link>
+                      <Link to="/sign-in" className="signin-btn">Sign In</Link>
                     </div>
                   </div>
                 </nav>

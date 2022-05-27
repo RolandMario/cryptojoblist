@@ -45,7 +45,7 @@ const About = () => {
                 </div>
                 <div className="col-lg-6">
                   <div className="about-img">
-                    <img src="assets/img/about.jpg" alt="about image" />
+                    <img src="assets/img/about.jpg" alt="about us cover" />
                   </div>
                 </div>
               </div>
@@ -134,13 +134,13 @@ const About = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Consectetur adipiscing elit.
                     </p>
                     <div className="theme-btn">
-                      <a href="#" className="default-btn">Checkout More</a>
+                      <a href="link" className="default-btn">Checkout More</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-5">
                   <div className="grow-img">
-                    <img src="assets/img/grow-img.jpg" alt="grow image" />
+                    <img src="assets/img/grow-img.jpg" alt="grow" />
                   </div>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const About = () => {
                   <div className="blog-card">
                     <div className="blog-img">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/2.jpg" alt="blog image" />
+                        <img src="assets/img/blog/2.jpg" alt="blog" />
                       </a>
                     </div>
                     <div className="blog-text">
@@ -301,7 +301,7 @@ const About = () => {
                   <div className="blog-card">
                     <div className="blog-img">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/3.jpg" alt="blog image" />
+                        <img src="assets/img/blog/3.jpg" alt="blog" />
                       </a>
                     </div>
                     <div className="blog-text">

@@ -38,7 +38,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/1.jpg" alt="blog image" />
+                            <img src="assets/img/blog/1.jpg" alt="blog" />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -69,7 +69,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/2.jpg" alt="blog image" />
+                            <img src="assets/img/blog/2.jpg" alt="blog" />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -100,7 +100,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/3.jpg" alt="blog image" />
+                            <img src="assets/img/blog/3.jpg" alt="blog" />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -131,7 +131,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/4.jpg" alt="blog image" />
+                            <img src="assets/img/blog/4.jpg" alt="blog" />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -162,7 +162,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/5.jpg" alt="blog image" />
+                            <img src="assets/img/blog/5.jpg" alt="blog " />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -193,7 +193,7 @@ const Blog = () => {
                       <div className="blog-card">
                         <div className="blog-img">
                           <a href="blog-details.html">
-                            <img src="assets/img/blog/6.jpg" alt="blog image" />
+                            <img src="assets/img/blog/6.jpg" alt="blog " />
                           </a>
                         </div>
                         <div className="blog-text">
@@ -224,15 +224,15 @@ const Blog = () => {
                   <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                       <li className="page-item disabled">
-                        <a className="page-link" href="#" tabIndex={-1} aria-disabled="true">
+                        <a className="page-link" href="link" tabIndex={-1} aria-disabled="true">
                           <i className="bx bx-chevrons-left bx-fade-left" />
                         </a>
                       </li>
-                      <li className="page-item"><a className="page-link" href="#">1</a></li>
-                      <li className="page-item"><a className="page-link active" href="#">2</a></li>
-                      <li className="page-item"><a className="page-link" href="#">3</a></li>
+                      <li className="page-item"><a className="page-link" href="link">1</a></li>
+                      <li className="page-item"><a className="page-link active" href="link">2</a></li>
+                      <li className="page-item"><a className="page-link" href="link">3</a></li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <a className="page-link" href="link">
                           <i className="bx bx-chevrons-right bx-fade-right" />
                         </a>
                       </li>
@@ -254,7 +254,7 @@ const Blog = () => {
                     <h3>Popular Post</h3>
                     <article className="popular-post">
                       <a href="blog-details.html" className="blog-thumb">
-                        <img src="assets/img/blog/popular-post1.jpg" alt="blog image" />
+                        <img src="assets/img/blog/popular-post1.jpg" alt="blog" />
                       </a>
                       <div className="info">
                         <time dateTime="2021-04-08">May 8, 2021</time>
@@ -265,7 +265,7 @@ const Blog = () => {
                     </article>
                     <article className="popular-post">
                       <a href="blog-details.html" className="blog-thumb">
-                        <img src="assets/img/blog/popular-post2.jpg" alt="blog image" />
+                        <img src="assets/img/blog/popular-post2.jpg" alt="blog" />
                       </a>
                       <div className="info">
                         <time dateTime="2021-04-08">May 5, 2021</time>
@@ -278,7 +278,7 @@ const Blog = () => {
                     </article>
                     <article className="popular-post">
                       <a href="blog-details.html" className="blog-thumb">
-                        <img src="assets/img/blog/popular-post3.jpg" alt="blog image" />
+                        <img src="assets/img/blog/popular-post3.jpg" alt="blog" />
                       </a>
                       <div className="info">
                         <time dateTime="2021-04-08">April 20, 2021</time>
@@ -291,7 +291,7 @@ const Blog = () => {
                     </article>
                     <article className="popular-post">
                       <a href="blog-details.html" className="blog-thumb">
-                        <img src="assets/img/blog/popular-post4.jpg" alt="blog image" />
+                        <img src="assets/img/blog/popular-post4.jpg" alt="blog" />
                       </a>
                       <div className="info">
                         <time dateTime="2021-04-08">April 28, 2021</time>
@@ -307,27 +307,27 @@ const Blog = () => {
                     <h3>Category</h3>
                     <ul>
                       <li>
-                        <a href="#">Web Design</a>
+                        <a href="link">Web Design</a>
                         <span>(10)</span>
                       </li>
                       <li>
-                        <a href="#">Job Tips</a>
+                        <a href="link">Job Tips</a>
                         <span>(5)</span>
                       </li>
                       <li>
-                        <a href="#">UX Design</a>
+                        <a href="link">UX Design</a>
                         <span>(8)</span>
                       </li>
                       <li>
-                        <a href="#">Tips &amp; Tricks</a>
+                        <a href="link">Tips &amp; Tricks</a>
                         <span>(4)</span>
                       </li>
                       <li>
-                        <a href="#">Writting</a>
+                        <a href="link">Writting</a>
                         <span>(12)</span>
                       </li>
                       <li>
-                        <a href="#">Business</a>
+                        <a href="link">Business</a>
                         <span>(7)</span>
                       </li>
                     </ul>
@@ -336,25 +336,25 @@ const Blog = () => {
                     <h3>Tags</h3>
                     <ul>
                       <li>
-                        <a href="#">Web Design</a>
+                        <a href="link">Web Design</a>
                       </li>
                       <li>
-                        <a href="#">Job Tips</a>
+                        <a href="link">Job Tips</a>
                       </li>
                       <li>
-                        <a href="#">UX Design</a>
+                        <a href="link">UX Design</a>
                       </li>
                       <li>
-                        <a href="#">Tips &amp; Tricks</a>
+                        <a href="link">Tips &amp; Tricks</a>
                       </li>
                       <li>
-                        <a href="#">Writting</a>
+                        <a href="link">Writting</a>
                       </li>
                       <li>
-                        <a href="#">Business</a>
+                        <a href="link">Business</a>
                       </li>
                       <li>
-                        <a href="#">Resume</a>
+                        <a href="link">Resume</a>
                       </li>
                     </ul>
                   </div>

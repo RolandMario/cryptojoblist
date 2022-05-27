@@ -1,0 +1,13 @@
+job_filter_category_sidebar jb_cover{
+    border: gray solid 20px;
+}
+
+.job_filter_sidebar_heading {
+    background-color: #FD1616;
+    color:#ffffff;
+}
+
+.job_filter_sidebar_heading  h1{
+    /* background-color: #ff3366; */
+    color:#ffffff;
+}

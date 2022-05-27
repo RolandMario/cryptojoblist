@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { AccountProvider } from './components/context/AccountContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AccountProvider>
+      <App />
+    </AccountProvider>
+    
   </React.StrictMode>
 );
 

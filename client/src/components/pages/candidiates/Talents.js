@@ -31,7 +31,7 @@ const Talents = () => {
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/1.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/1.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -44,16 +44,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>                           
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>                           
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/2.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/2.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -66,16 +66,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/3.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/3.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -88,16 +88,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/4.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/4.jpg" alt="candidatlink" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -110,16 +110,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/5.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/5.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -132,16 +132,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/6.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/6.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -154,16 +154,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/7.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/7.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -176,16 +176,16 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>  
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/8.jpg" alt="candidate image" />
+                      <img src="assets/img/candidate/8.jpg" alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
@@ -198,9 +198,9 @@ const Talents = () => {
                       </ul>
                     </div>
                     <div className="candidate-social">
-                      <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="#" target="_blank"><i className="bx bxl-linkedin" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>
                     </div>
                   </div>
                 </div>

@@ -195,7 +195,7 @@ const HomeIndex = () => {
                    </div>
                  </div>
                  <div className="col-lg-4 col-sm-8 offset-sm-2 offset-lg-0">
-                   <img src="assets/img/choose.png" alt="why choose image" />
+                   <img src="assets/img/choose.png" alt="why choose " />
                  </div>
                </div>
              </div>
@@ -212,7 +212,7 @@ const HomeIndex = () => {
                  <div className="col-lg-3 col-sm-6">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/1.jpg" alt="location image" />
+                       <img src="assets/img/location/1.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -227,7 +227,7 @@ const HomeIndex = () => {
                  <div className="col-lg-3 col-sm-6">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/2.jpg" alt="location image" />
+                       <img src="assets/img/location/2.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -242,7 +242,7 @@ const HomeIndex = () => {
                  <div className="col-lg-6 col-md-6 col-sm-12">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/3.jpg" alt="location image" />
+                       <img src="assets/img/location/3.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -257,7 +257,7 @@ const HomeIndex = () => {
                  <div className="col-lg-6 col-md-6 col-sm-12">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/5.jpg" alt="location image" />
+                       <img src="assets/img/location/5.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -272,7 +272,7 @@ const HomeIndex = () => {
                  <div className="col-lg-3 col-sm-6">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/4.jpg" alt="location image" />
+                       <img src="assets/img/location/4.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -287,7 +287,7 @@ const HomeIndex = () => {
                  <div className="col-lg-3 col-sm-6">
                    <a href="job-list.html">
                      <div className="location-img">
-                       <img src="assets/img/location/6.jpg" alt="location image" />
+                       <img src="assets/img/location/6.jpg" alt="location" />
                        <div className="location-text">
                          <div className="d-table">
                            <div className="d-table-cell">
@@ -629,12 +629,12 @@ const HomeIndex = () => {
                <div className="condidate-slider owl-carousel owl-theme">
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/1.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/1.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Mibraj Alex</a></h3>
@@ -653,7 +653,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          9D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -661,12 +661,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/2.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/2.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Felica Kareon</a></h3>
@@ -685,7 +685,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          8D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -693,12 +693,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/3.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/3.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Malisha Patel</a></h3>
@@ -717,7 +717,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          1D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -725,12 +725,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/1.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/1.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Mibraj Alex</a></h3>
@@ -749,7 +749,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          9D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -757,12 +757,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/4.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/4.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Quence Joes</a></h3>
@@ -781,7 +781,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          8D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -789,12 +789,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/2.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/2.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Felica Kareon</a></h3>
@@ -813,7 +813,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          8D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -821,12 +821,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/3.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/3.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Malisa Petel</a></h3>
@@ -845,7 +845,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          1D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -853,12 +853,12 @@ const HomeIndex = () => {
                  </div>
                  <div className="condidate-item">
                    <div className="candidate-img">
-                     <img src="assets/img/candidate/4.jpg" alt="candidate image" />
+                     <img src="assets/img/candidate/4.jpg" alt="candidate" />
                    </div>
                    <div className="candidate-social">
-                     <a href="#" target="_blank"><i className="bx bxl-facebook" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-twitter" /></a>
-                     <a href="#" target="_blank"><i className="bx bxl-instagram" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
+                     <a href="link" target="_blank"><i className="bx bxl-instagram" /></a>
                    </div>
                    <div className="candidate-text">
                      <h3><a href="candidate-details.html">Quence Joes</a></h3>
@@ -877,7 +877,7 @@ const HomeIndex = () => {
                          <i className="bx bx-stopwatch" />
                          8D ago
                        </p>
-                       <a href="#">
+                       <a href="link">
                          <i className="bx bx-heart" />
                        </a>
                      </div>
@@ -902,7 +902,7 @@ const HomeIndex = () => {
                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
                      </div>
                      <div className="testimonial-info-text">
-                       <img src="assets/img/client-1.png" alt="client image" />
+                       <img src="assets/img/client-1.png" alt="client" />
                        <h3>Alisa Meair</h3>
                        <p>CEO of  Company</p>
                      </div>
@@ -913,7 +913,7 @@ const HomeIndex = () => {
                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
                      </div>
                      <div className="testimonial-info-text">
-                       <img src="assets/img/client-2.png" alt="client image" />
+                       <img src="assets/img/client-2.png" alt="client" />
                        <h3>Adam Smith</h3>
                        <p>Web Developer</p>
                      </div>
@@ -924,7 +924,7 @@ const HomeIndex = () => {
                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
                      </div>
                      <div className="testimonial-info-text">
-                       <img src="assets/img/client-1.png" alt="client image" />
+                       <img src="assets/img/client-1.png" alt="client" />
                        <h3>John Doe</h3>
                        <p>Graphics Designer</p>
                      </div>
@@ -946,7 +946,7 @@ const HomeIndex = () => {
                    <div className="blog-card">
                      <div className="blog-img">
                        <a href="blog-details.html">
-                         <img src="assets/img/blog/1.jpg" alt="blog image" />
+                         <img src="assets/img/blog/1.jpg" alt="blog" />
                        </a>
                      </div>
                      <div className="blog-text">
@@ -977,7 +977,7 @@ const HomeIndex = () => {
                    <div className="blog-card">
                      <div className="blog-img">
                        <a href="blog-details.html">
-                         <img src="assets/img/blog/2.jpg" alt="blog image" />
+                         <img src="assets/img/blog/2.jpg" alt="blog" />
                        </a>
                      </div>
                      <div className="blog-text">
@@ -1008,7 +1008,7 @@ const HomeIndex = () => {
                    <div className="blog-card">
                      <div className="blog-img">
                        <a href="blog-details.html">
-                         <img src="assets/img/blog/3.jpg" alt="blog image" />
+                         <img src="assets/img/blog/3.jpg" alt="blog" />
                        </a>
                      </div>
                      <div className="blog-text">
