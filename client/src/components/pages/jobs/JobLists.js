@@ -38,8 +38,9 @@ const JobLists = () => {
                     <div className="row align-items-center">
                       <div className="col-md-1">
                         <div className="company-logo">
-                          <a href="job-details.html" />
+                          <a href="job-details.html" >
                           <img src="assets/img/company-logo/1.png" alt="logo" />
+                          </a>
                         </div>
                       </div>
                       <div className="col-md-8">

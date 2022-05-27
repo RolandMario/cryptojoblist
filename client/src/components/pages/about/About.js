@@ -239,7 +239,7 @@ const About = () => {
                   <div className="blog-card">
                     <div className="blog-img">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/1.jpg" alt="blog image" />
+                        <img src="assets/img/blog/1.jpg" alt="blog" />
                       </a>
                     </div>
                     <div className="blog-text">

@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const TopBar = () => {
 
-  let navigate = useNavigate();
+  
 
-  const walletConnect = ()=>{
-    
-  }
+ 
   return (
     <>
     <div className="navbar-area">

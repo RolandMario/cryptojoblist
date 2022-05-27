@@ -31,20 +31,20 @@ const Resume = () => {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="resume-thumb-area text-center">
-                      <img src="assets/img/account.jpg" alt="account image" />
+                      <img src="assets/img/account.jpg" alt="account" />
                       <h3>Lula Wallace</h3>
                       <p>Web Developer</p>
                       <div className="social-links">
-                        <a href="#" target="-blank">
+                        <a href="link" target="-blank">
                           <i className="bx bxl-facebook" />
                         </a>
-                        <a href="#" target="-blank">
+                        <a href="link" target="-blank">
                           <i className="bx bxl-twitter" />
                         </a>
-                        <a href="#" target="-blank">
+                        <a href="link" target="-blank">
                           <i className="bx bxl-github" />
                         </a>
-                        <a href="#" target="-blank">
+                        <a href="link" target="-blank">
                           <i className="bx bxl-linkedin" />
                         </a>
                       </div>
@@ -155,7 +155,7 @@ const Resume = () => {
                       </div>
                     </div>
                     <div className="theme-btn">
-                      <a href="#" className="default-btn">
+                      <a href="link" className="default-btn">
                         Download
                         <i className="bx bx-download bx-fade-down" />
                       </a>

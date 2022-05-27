@@ -52,7 +52,7 @@ const UserDashboard = () => {
                             <div className="jp_listing_list_icon_cont_wrapper">
                               <ul>
                                 <li>email:</li>
-                                <li><a href="#">luca@example.com</a></li>
+                                <li><a href="link">luca@example.com</a></li>
                               </ul>
                             </div>
                           </div>
@@ -63,7 +63,7 @@ const UserDashboard = () => {
                             <div className="jp_listing_list_icon_cont_wrapper">
                               <ul>
                                 <li>website:</li>
-                                <li><a href="#">www.example.com</a></li>
+                                <li><a href="link">www.example.com</a></li>
                               </ul>
                             </div>
                           </div>
@@ -78,10 +78,10 @@ const UserDashboard = () => {
                             <div className="jp_listing_left_bottom_sidebar_social_wrapper">
                               <ul>
                                 <li />
-                                <li><a href="#"><i className="fab fa-facebook-f" /></a></li>
-                                <li><a href="#"><i className="fab fa-twitter" /></a></li>
-                                <li><a href="#"><i className="fab fa-linkedin-in" /></a></li>
-                                <li><a href="#"><i className="fab fa-google-plus-g" /></a></li>
+                                <li><a href="link"><i className="fab fa-facebook-f" /></a></li>
+                                <li><a href="link"><i className="fab fa-twitter" /></a></li>
+                                <li><a href="link"><i className="fab fa-linkedin-in" /></a></li>
+                                <li><a href="link"><i className="fab fa-google-plus-g" /></a></li>
                               </ul>
                             </div>
                           </div>

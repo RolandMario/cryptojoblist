@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
-import ProfileDetails from './ProfileDetails'
+
 import * as AccountComponents from './AccountDetails'
 import { AccountContext } from '../../context/AccountContext'
 const Account = () => {
@@ -42,7 +42,7 @@ const Account = () => {
                 <div className="col-md-4">
                   <div className="account-information">
                     <div className="profile-thumb">
-                      <img src="assets/img/account.jpg" alt="account holder image" />
+                      <img src="assets/img/account.jpg" alt="account holder" />
                       <h3>John Smith</h3>
                       <p>Web Developer</p>
                     </div>
@@ -54,7 +54,7 @@ const Account = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="#" onClick={()=>{setAccountData("Profile")}}>
+                        <a href="link" onClick={()=>{setAccountData("Profile")}}>
                           <i className="bx bx-user" />
                           My Profile
                         </a>
@@ -66,37 +66,37 @@ const Account = () => {
                         </Link>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-briefcase" />
                           Applied Job
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-envelope" />
                           Messages
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-heart" />
                           Saved Jobs
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-lock-alt" />
                           Change Password
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-coffee-togo" />
                           Delete Account
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="link">
                           <i className="bx bx-log-out" />
                           Log Out
                         </a>

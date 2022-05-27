@@ -171,7 +171,7 @@ const FindJobs = () => {
                             <a href="job-details.html">Post-Room Operate</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">Tourt Design LTD</a></li>
+                            <li>Via <a href="link">Tourt Design LTD</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               Wellesley Rd, London
@@ -218,7 +218,7 @@ const FindJobs = () => {
                             <a href="job-details.html">Data Entry</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="#">Techno Inc.</a></li>
+                            <li>Via <a href="link">Techno Inc.</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
                               Street 40/A, London

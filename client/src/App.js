@@ -16,7 +16,7 @@ import SignIn from './components/pages/auth/SignIn';
 import SignUp from './components/pages/auth/SignUp';
 import Account from './components/pages/accounts/Account';
 import Resume from './components/pages/accounts/Resume';
-import Dashboard from './components/playground/dashboard';
+
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp/>}/>
           <Route path="/account" element={<Account/>}/>
           <Route path="/resume" element={<Resume/>}/>
-          <Route path="/dboard" element={<Dashboard/>}/>
+          
         </Routes>
         <Footer/>
    </Router>

@@ -35,9 +35,9 @@ const AppliedJobs = () => {
                         <li><a href="pricing_plans.html"><i className="fas fa-tag" />pricing plans</a></li>
                       </ul>
                       <ul className="feedlist logout_link jb_cover">
-                        <li><a href="#"><i className="fas fa-power-off" /> log out</a></li>
+                        <li><a href="link"><i className="fas fa-power-off" /> log out</a></li>
                         <li>
-                          <a href="#" data-toggle="modal" data-target="#myModal"><i className="fas fa-trash-alt" />delete profile
+                          <a href="link" data-toggle="modal" data-target="#myModal"><i className="fas fa-trash-alt" />delete profile
                           </a>
                         </li>
                       </ul>
@@ -57,13 +57,13 @@ const AppliedJobs = () => {
                                 <input type="password" name="password" placeholder="Enter Password" />
                               </div>
                               <div className="header_btn search_btn applt_pop_btn">
-                                <a href="#">save updates</a>
+                                <a href="link">save updates</a>
                               </div>
                               <div className="cancel_wrapper">
-                                <a href="#" className data-dismiss="modal">cancel</a>
+                                <a href="link" className data-dismiss="modal">cancel</a>
                               </div>
                               <div className="login_remember_box jb_cover">
-                                <label className="control control--checkbox">You accepts our <a href="#">Terms and Conditions </a> and <a href="#">Privacy Policy</a>
+                                <label className="control control--checkbox">You accepts our <a href="link">Terms and Conditions </a> and <a href="#">Privacy Policy</a>
                                   <input type="checkbox" />
                                   <span className="control__indicator" />
                                 </label>
@@ -93,7 +93,7 @@ const AppliedJobs = () => {
                               <br /> <span>google</span>
                             </div>
                             <div className="jb_job_post_right_cont">
-                              <h4><a href="#">Trainee Web Designer, (Fresher)</a></h4>
+                              <h4><a href="link">Trainee Web Designer, (Fresher)</a></h4>
                               <ul>
                                 <li><i className="flaticon-cash" />&nbsp; $12K - 15k P.A.</li>
                                 <li><i className="flaticon-location-pointer" />&nbsp; Los Angeles, Califonia PO, 455001</li>
@@ -105,11 +105,11 @@ const AppliedJobs = () => {
                               <ul>
                                 <li>
                                   <div className="job_adds_right">
-                                    <a href="#"><i className="far fa-heart" /></a>
+                                    <a href="link"><i className="far fa-heart" /></a>
                                   </div>
                                 </li>
-                                <li><a href="#">Part Time</a></li>
-                                <li> <a href="#" className="applied_btn">applied</a></li>
+                                <li><a href="link">Part Time</a></li>
+                                <li> <a href="link" className="applied_btn">applied</a></li>
                               </ul>
                             </div>
                           </div>
@@ -125,7 +125,7 @@ const AppliedJobs = () => {
                               <br /> <span>google</span>
                             </div>
                             <div className="jb_job_post_right_cont">
-                              <h4><a href="#">software engineer, (Fresher)</a></h4>
+                              <h4><a href="link">software engineer, (Fresher)</a></h4>
                               <ul>
                                 <li><i className="flaticon-cash" />&nbsp; $12K - 15k P.A.</li>
                                 <li><i className="flaticon-location-pointer" />&nbsp; Los Angeles, Califonia PO, 455001</li>
@@ -137,11 +137,11 @@ const AppliedJobs = () => {
                               <ul>
                                 <li>
                                   <div className="job_adds_right">
-                                    <a href="#"><i className="far fa-heart" /></a>
+                                    <a href="link"><i className="far fa-heart" /></a>
                                   </div>
                                 </li>
-                                <li><a href="#">Part Time</a></li>
-                                <li> <a href="#" className="applied_btn">applied</a></li>
+                                <li><a href="link">Part Time</a></li>
+                                <li> <a href="link" className="applied_btn">applied</a></li>
                               </ul>
                             </div>
                           </div>
@@ -157,7 +157,7 @@ const AppliedJobs = () => {
                               <br /> <span>google</span>
                             </div>
                             <div className="jb_job_post_right_cont">
-                              <h4><a href="#">Trainee Web Designer, (Fresher)</a></h4>
+                              <h4><a href="link">Trainee Web Designer, (Fresher)</a></h4>
                               <ul>
                                 <li><i className="flaticon-cash" />&nbsp; $12K - 15k P.A.</li>
                                 <li><i className="flaticon-location-pointer" />&nbsp; Los Angeles, Califonia PO, 455001</li>
@@ -169,11 +169,11 @@ const AppliedJobs = () => {
                               <ul>
                                 <li>
                                   <div className="job_adds_right">
-                                    <a href="#"><i className="far fa-heart" /></a>
+                                    <a href="link"><i className="far fa-heart" /></a>
                                   </div>
                                 </li>
-                                <li><a href="#">Part Time</a></li>
-                                <li> <a href="#" className="applied_btn">applied</a></li>
+                                <li><a href="link">Part Time</a></li>
+                                <li> <a href="link" className="applied_btn">applied</a></li>
                               </ul>
                             </div>
                           </div>
@@ -189,7 +189,7 @@ const AppliedJobs = () => {
                               <br /> <span>google</span>
                             </div>
                             <div className="jb_job_post_right_cont">
-                              <h4><a href="#">Trainee Web Designer, (Fresher)</a></h4>
+                              <h4><a href="link">Trainee Web Designer, (Fresher)</a></h4>
                               <ul>
                                 <li><i className="flaticon-cash" />&nbsp; $12K - 15k P.A.</li>
                                 <li><i className="flaticon-location-pointer" />&nbsp; Los Angeles, Califonia PO, 455001</li>
@@ -201,11 +201,11 @@ const AppliedJobs = () => {
                               <ul>
                                 <li>
                                   <div className="job_adds_right">
-                                    <a href="#"><i className="far fa-heart" /></a>
+                                    <a href="link"><i className="far fa-heart" /></a>
                                   </div>
                                 </li>
-                                <li><a href="#">Part Time</a></li>
-                                <li> <a href="#" className="applied_btn">applied</a></li>
+                                <li><a href="link">Part Time</a></li>
+                                <li> <a href="link" className="applied_btn">applied</a></li>
                               </ul>
                             </div>
                           </div>
@@ -230,7 +230,7 @@ const AppliedJobs = () => {
                     </div>
                     <div className="jb_newslwtteter_button">
                       <div className="header_btn search_btn news_btn jb_cover">
-                        <a href="#">submit</a>
+                        <a href="link">submit</a>
                       </div>
                     </div>
                   </div>

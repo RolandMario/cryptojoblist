@@ -50,22 +50,22 @@ const SignUp = () => {
                       <span>Or sign up with</span>
                       <ul>
                         <li>
-                          <a href="#">
+                          <a href="link">
                             <i className="bx bxl-google" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="link">
                             <i className="bx bxl-facebook" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="link">
                             <i className="bx bxl-twitter" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="link">
                             <i className="bx bxl-linkedin" />
                           </a>
                         </li>
