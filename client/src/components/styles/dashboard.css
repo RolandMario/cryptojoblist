@@ -11,3 +11,22 @@ job_filter_category_sidebar jb_cover{
     /* background-color: #ff3366; */
     color:#ffffff;
 }
+.container{
+    max-width: 1500px;
+}
+.job_filter_category_sidebar{
+    height: 450px;
+}
+.feedlist li button {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #222;
+    padding: 12px 0px;
+    padding-left: 35px;
+    border-left: 3px solid transparent;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
