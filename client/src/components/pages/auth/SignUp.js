@@ -1,11 +1,86 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState, useReducer} from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { useNavigate} from 'react-router-dom'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
-
+import axios from 'axios'
 const SignUp = () => {
+
+
+
+  let initialState ={
+    isLoading: "",
+    success: "",
+    existed: "",
+    failed: ""
+  }
+
+  const signUpReducer = (state, action)=>{
+      switch (action.type) {
+        case "signup":{
+          return{
+              ...state,
+              isLoading: "processing..., pls wait!",
+              success: "",
+              failed: "",
+              existed: ""
+              
+          }
+      }
+      case "succeed":{
+        return{
+            ...state,
+            success: "Done!",
+            isLoading: "",
+            failed: "",
+            existed: ""
+            
+        }
+    }
+    case "exist":{
+      return{
+          ...state,
+          success: "",
+          isLoading: "",
+          failed:"",
+          existed: "Already registered"
+      }
+  }
+  case "failure":{
+    return{
+        ...state,
+        success: "",
+        isLoading: "",
+        failed:" Something went wrong, try again",
+        existed: ""
+    }
+}
+        default:
+          return state
+      }
+  }
   const [walletAddress, ] = useContext(WalletAddressContext)
+  const [state, dispatch] = useReducer(signUpReducer, initialState)
+
+  const [style, setStyle] = useState("cat");
+  const [styleCandidiate, setStyleCandidiate] = useState("cat");
+  const [category, setCategory] = useState("")
+
+  const changeStyle = () => {
+     setStyle("catSelected");
+     setStyleCandidiate("cat")
+     setCategory("Recruiter")
+
+  };
+
+  const changeStyleCand = () => {
+    setStyleCandidiate("catSelected")
+    setStyle("cat");
+    setCategory("candidiate")
+ };
+ const routing = ()=>{
+
+ }
 
   let navigate = useNavigate();
 
@@ -15,15 +90,39 @@ const SignUp = () => {
           email: "",
           password: ""
       },
-      onSubmit: (values)=>{
-        try {
-           console.log("sign up details",values)
-            console.log(walletAddress)
+      onSubmit: async(values)=>{
+        dispatch({type:'signup'})
+        const baseURL = 'http://176.58.122.154:8800' ||'http://localhost:8800'
+        const url = `${baseURL}/api/recruiter/addRecruiter`
+        
+          let signupData = {
+            "username":values.username,
+            "email": values.email,
+            "password": values.password,
+            "walletAddress": walletAddress
+          }
+          
+          try {
+          if(category === "Recruiter"){
+          
+          const {data} = await axios.post(url, signupData)
+          console.log("return fron db",data)
+            dispatch({type: "secceed"})
+              navigate("/recruiter-account")
+            }else{
               navigate('/account')
+            }
+              
         } catch (error) {
-          console.log(error)
+          if(error.response.status === 400){
+            dispatch({type: 'exist'})
+          }
+            
+          else{
+            dispatch({type: 'failure'})
+          }
+             
         }
-           
           
       }
   })
@@ -57,7 +156,17 @@ const SignUp = () => {
               <div className="row">
                 <div className="col-lg-6 col-md-8 offset-md-2 offset-lg-3">
                   <form onSubmit={formik.handleSubmit} className="signup-form">
-                    <div>
+                  
+                    <div className={style} onClick={changeStyle}>
+                      <label>Recruiter</label>
+                    </div>
+                    <div className={styleCandidiate} onClick={changeStyleCand}>
+                      <label>Candidiates</label>
+                    </div>
+                      
+                    
+                    <div className='signupState'>
+                     <h4>{state.isLoading }{state.success}{state.failed}{state.existed}</h4> 
                     <label>Wallet Address</label>
                     <p>{walletAddress}</p>
                     </div>

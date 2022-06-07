@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { AccountProvider } from './components/context/AccountContext';
+import { RecAccountProvider } from './components/context/RecAccountContext';
 import { WalletAddressProvider } from './components/context/WalletAddressContext';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +11,10 @@ root.render(
   <React.StrictMode>
     <AccountProvider>
       <WalletAddressProvider>
-        <App />
+        <RecAccountProvider>
+          <App /> 
+        </RecAccountProvider>
+       
       </WalletAddressProvider>
       
     </AccountProvider>

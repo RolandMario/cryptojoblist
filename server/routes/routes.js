@@ -1,10 +1,12 @@
-const express = require('express');
-const Message = require('../controller/Message')
+const recruiterController = require('../controller/RecruiterController.js')
 
 
-const router = express.Router()
+
+// router
+const router = require('express').Router()
 
 
-router.get('/', Message)
-
+// use routers
+router.post('/addRecruiter',  recruiterController.addRecruiter)
+router.get('/getRecruiter',  recruiterController.getRecruiter)
 module.exports = router;

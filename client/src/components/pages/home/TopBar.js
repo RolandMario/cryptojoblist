@@ -1,11 +1,17 @@
 import React, {useEffect, useContext, useState} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Web3 from 'web3'
+import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
 const TopBar = () => {
 
- 
+ let param = useParams();
+
+
+ console.log("param object",param)
+
 const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+const [wAddress, setWAddress] = useState("")
 const [, setIsAddress] = useState(false)
 
 let navigate = useNavigate()
@@ -20,6 +26,7 @@ let navigate = useNavigate()
           const accounts = await web3.eth.getAccounts();
           console.log(accounts[0])
           setWalletAddress(accounts[0]);
+          
         navigate("/sign-up")
       }
       
@@ -38,15 +45,24 @@ let navigate = useNavigate()
           const accounts = await web3.eth.getAccounts();
           console.log(accounts[0])
           setWalletAddress(accounts[0]);
-  
+          setWAddress(accounts[0])
+
           //verify address from the db using wallet address as the parameter
+          const baseURL = 'http://176.58.122.154:8800' || "http://localhost:8800"
+         
+          const url = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
+          const {data} = await axios.get(url)
+         
           //if found
-        //navigate("/account")
-        //else: user not found sign up for new user
+         
+        navigate("/account")
+        //else: {catch the error} user not found sign up for new user
       }
       
     } catch (error) {
-      console.log(error)
+      if(error.response.status === 400){
+        console.log("user does not exists")
+      }
     }
   }
 useEffect(() => {

@@ -30,3 +30,28 @@ job_filter_category_sidebar jb_cover{
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+.cat label {
+    border: gray solid 5px;
+    width: 40%;
+    padding: 2%;
+    cursor: pointer;
+    height: 50px;
+    font-size: larger;
+    float: left;
+    margin-left: 5%;
+}
+.catSelected label {
+    border: rgb(16, 100, 16) solid 5px;
+    width: 40%;
+    padding: 2%;
+    cursor: pointer;
+    height: 50px;
+    font-size: larger;
+    float: left;
+    margin-left: 5%;
+}
+.signupState h4{
+    text-align: center;
+    color: green;
+    
+}
