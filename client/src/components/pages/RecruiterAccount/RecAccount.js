@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
-import RecDetails from './RecDetails'
+
 import * as AccountComponents from './RecExport'
-import { AccountContext } from '../../context/AccountContext'
+
 import { RecAccountContext } from '../../context/RecAccountContext'
 const RecAccount = () => {
 
@@ -93,12 +93,12 @@ const RecAccount = () => {
               </ul>
               <ul className="feedlist logout_link jb_cover">
                 <li>
-                  <a href="#">
+                  <a href="link">
                     <i className="fas fa-power-off" /> log out
                   </a>
                 </li>
                 <li>
-                  <a href="#" data-toggle="modal" data-target="#myModal">
+                  <a href="link" data-toggle="modal" data-target="#myModal">
                     <i className="fas fa-trash-alt" />
                     delete profile
                   </a>
@@ -130,17 +130,17 @@ const RecAccount = () => {
                         />
                       </div>
                       <div className="header_btn search_btn applt_pop_btn">
-                        <a href="#">save updates</a>
+                        <a href="link">save updates</a>
                       </div>
                       <div className="cancel_wrapper">
-                        <a href="#" className="" data-dismiss="modal">
+                        <a href="link" className="" data-dismiss="modal">
                           cancel
                         </a>
                       </div>
                       <div className="login_remember_box jb_cover">
                         <label className="control control--checkbox">
-                          You accepts our <a href="#">Terms and Conditions </a>{" "}
-                          and <a href="#">Privacy Policy</a>
+                          You accepts our <a href="link">Terms and Conditions </a>{" "}
+                          and <a href="link">Privacy Policy</a>
                           <input type="checkbox" />
                           <span className="control__indicator" />
                         </label>

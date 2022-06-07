@@ -1,5 +1,5 @@
 import React from 'react'
-import { TalentH1, TalentSpan, TalentH3, Buttons, TalentP,ImgUpload, Input, Form, FormWrapper, TextArea, Button, Fieldset } from './CompanyElements'
+import { TalentH1,  TalentH3, ImgUpload, Input, Form, FormWrapper, TextArea, Button, Fieldset } from './CompanyElements'
 
 const Company = () => {
   return (

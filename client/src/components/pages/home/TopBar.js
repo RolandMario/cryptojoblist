@@ -11,7 +11,7 @@ const TopBar = () => {
  console.log("param object",param)
 
 const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
-const [wAddress, setWAddress] = useState("")
+
 const [, setIsAddress] = useState(false)
 
 let navigate = useNavigate()
@@ -45,7 +45,7 @@ let navigate = useNavigate()
           const accounts = await web3.eth.getAccounts();
           console.log(accounts[0])
           setWalletAddress(accounts[0]);
-          setWAddress(accounts[0])
+          
 
           //verify address from the db using wallet address as the parameter
           const baseURL = 'http://176.58.122.154:8800' || "http://localhost:8800"
@@ -54,6 +54,7 @@ let navigate = useNavigate()
           const {data} = await axios.get(url)
          
           //if found
+          if(data)
          
         navigate("/account")
         //else: {catch the error} user not found sign up for new user

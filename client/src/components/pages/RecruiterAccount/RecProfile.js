@@ -211,7 +211,7 @@ const RecProfile = () => {
                     </div>
                     <div className="col-lg-12 col-md-12 col-sm-12 col-12">
                       <div className="header_btn search_btn jb_cover">
-                        <a href="#">add more</a>
+                        <a href="link">add more</a>
                       </div>
                     </div>
                   </div>
@@ -281,7 +281,7 @@ const RecProfile = () => {
                   <span className="control__indicator" />
                 </label>
                 <div className="header_btn search_btn jb_cover">
-                  <a href="#">save changes</a>
+                  <a href="link">save changes</a>
                 </div>
               </div>
             </div>

@@ -29,7 +29,7 @@ const RecDetails = () => {
                   <div className="col-lg-4 col-md-5 col-sm-12 col-12">
                     <div className="jp_job_post_right_btn_wrapper jb_cover">
                       <div className="header_btn search_btn jb_cover">
-                        <a href="#">view profile</a>
+                        <a href="link">view profile</a>
                       </div>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ const RecDetails = () => {
                       <ul>
                         <li>email:</li>
                         <li>
-                          <a href="#">webstrot@example.com</a>
+                          <a href="link">webstrot@example.com</a>
                         </li>
                       </ul>
                     </div>
@@ -163,7 +163,7 @@ const RecDetails = () => {
                       <ul>
                         <li>website:</li>
                         <li>
-                          <a href="#">www.webstrot.com</a>
+                          <a href="link">www.webstrot.com</a>
                         </li>
                       </ul>
                     </div>
@@ -193,22 +193,22 @@ const RecDetails = () => {
                         <ul>
                           <li />
                           <li>
-                            <a href="#">
+                            <a href="link">
                               <i className="fab fa-facebook-f" />
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="link">
                               <i className="fab fa-twitter" />
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="link">
                               <i className="fab fa-linkedin-in" />
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="link">
                               <i className="fab fa-google-plus-g" />
                             </a>
                           </li>
@@ -240,7 +240,7 @@ const RecDetails = () => {
                     <div className="col-lg-4 col-md-5 col-sm-4 col-12">
                       <div className="jp_job_post_right_btn_wrapper jb_cover">
                         <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="#">send</a>
+                          <a href="link">send</a>
                         </div>
                       </div>
                     </div>
@@ -262,7 +262,7 @@ const RecDetails = () => {
                     <div className="col-lg-4 col-md-5 col-sm-4 col-12">
                       <div className="jp_job_post_right_btn_wrapper jb_cover">
                         <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="#">send</a>
+                          <a href="link">send</a>
                         </div>
                       </div>
                     </div>
@@ -284,7 +284,7 @@ const RecDetails = () => {
                     <div className="col-lg-4 col-md-5 col-sm-4 col-12">
                       <div className="jp_job_post_right_btn_wrapper jb_cover">
                         <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="#">send</a>
+                          <a href="link">send</a>
                         </div>
                       </div>
                     </div>
@@ -306,7 +306,7 @@ const RecDetails = () => {
                     <div className="col-lg-4 col-md-5 col-sm-4 col-12">
                       <div className="jp_job_post_right_btn_wrapper jb_cover">
                         <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="#">send</a>
+                          <a href="link">send</a>
                         </div>
                       </div>
                     </div>

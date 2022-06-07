@@ -78,9 +78,7 @@ const SignUp = () => {
     setStyle("cat");
     setCategory("candidiate")
  };
- const routing = ()=>{
-
- }
+ 
 
   let navigate = useNavigate();
 
