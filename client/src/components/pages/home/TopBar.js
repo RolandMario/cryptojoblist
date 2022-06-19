@@ -1,13 +1,13 @@
 import React, {useEffect, useContext, useState} from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import Web3 from 'web3'
-import axios from 'axios'
+
 import { WalletAddressContext } from '../../context/WalletAddressContext'
 import { SignInContext } from '../../context/SignInContext'
 const TopBar = () => {
 
 const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
-const [isSignIn, setIsSignIn] = useContext(SignInContext)
+//const [isSignIn, setIsSignIn] = useContext(SignInContext)
 
 const [, setIsAddress] = useState(false)
 

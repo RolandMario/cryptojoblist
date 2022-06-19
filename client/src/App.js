@@ -16,7 +16,6 @@ import SignIn from './components/pages/auth/SignIn';
 import SignUp from './components/pages/auth/SignUp';
 import Account from './components/pages/accounts/Account';
 import Resume from './components/pages/accounts/Resume';
-import Company from './components/pages/register/Company'
 import RecAccount from './components/pages/RecruiterAccount/RecAccount';
 import ApplyForJob from './components/pages/apply/ApplyForJob';
 import JobDetails from './components/pages/jobs/JobDetails'

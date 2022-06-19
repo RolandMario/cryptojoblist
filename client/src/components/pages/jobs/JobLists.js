@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { WalletAddressContext } from '../../context/WalletAddressContext'
+//import { WalletAddressContext } from '../../context/WalletAddressContext'
 import axios from  'axios'
 import { JobPostContext } from '../../context/JobPostContext'
 import {useNavigate} from 'react-router-dom'
@@ -9,7 +9,7 @@ const JobLists = () => {
 
 let navigate = useNavigate();
 
-const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+//const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
 const [jobPostData, setJobPostData] = useContext(JobPostContext)
 
 

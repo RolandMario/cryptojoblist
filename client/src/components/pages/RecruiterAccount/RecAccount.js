@@ -8,7 +8,7 @@ import { baseURL } from '../../constants/Constants';
 const RecAccount = () => {
 
     const [recAccountData, setRecAccountData] = useContext(RecAccountContext);
-    const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+    const [walletAddress, ] = useContext(WalletAddressContext)
     const [recData, setRecData] = useState({})
    
 

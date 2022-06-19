@@ -21,7 +21,7 @@ const Applications = () => {
                 </div>
                 <div className="recent_cntnt">
                   <h6>
-                    <a href="#">luca wallace</a>
+                    <a href="link">luca wallace</a>
                   </h6>
                   <ul>
                     <li>

@@ -226,7 +226,7 @@ const CompanyPage = () => {
             <h1>
               about us{" "}
               <span>
-                <a href="#" data-toggle="modal" data-target="#myModal2">
+                <a href="link" data-toggle="modal" data-target="#myModal2">
                   <i className="fas fa-edit" />
                 </a>
               </span>

@@ -1,5 +1,4 @@
 import React, {useContext, useReducer} from 'react'
-import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
@@ -63,7 +62,7 @@ const PostNewJobs = () => {
           }
       }
       
-      const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+      const [walletAddress, ] = useContext(WalletAddressContext)
       const [state, dispatch] = useReducer(postJobReducer, initialState)
       const formik = useFormik({
         initialValues:{
@@ -107,6 +106,7 @@ const PostNewJobs = () => {
                 try {
                   dispatch({type:'postJob'})
                   const {data} = await axios.post(url, jobPostDetails)
+                  console.log(data)
                   dispatch({type:'succeeded'})
                 } catch (error) {
                   if(error.response.status === 400){

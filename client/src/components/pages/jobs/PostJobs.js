@@ -63,7 +63,7 @@ const PostJobs = () => {
       }
   }
   
-  const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+  const [walletAddress, ] = useContext(WalletAddressContext)
   const [state, dispatch] = useReducer(postJobReducer, initialState)
   const formik = useFormik({
     initialValues:{
@@ -109,6 +109,7 @@ const PostJobs = () => {
             try {
               dispatch({type:'postJob'})
               const {data} = await axios.post(url, jobPostDetails)
+              console.log(data)
               dispatch({type:'succeeded'})
             } catch (error) {
               if(error.response.status === 400){

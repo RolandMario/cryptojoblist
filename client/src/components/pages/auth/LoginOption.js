@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const LoginOption = () => {
 
     let navigate = useNavigate()
-    const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+    const [walletAddress, ] = useContext(WalletAddressContext)
     const [loginAs, setLoginAs] = useState("")
 
     const login = async()=>{

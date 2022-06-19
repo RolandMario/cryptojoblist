@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
-import { TalentH1,  TalentH3, ImgUpload, Input, Form, FormWrapper, TextArea, Button, Fieldset } from './ApplyForJobElements'
+import { TalentH1, ImgUpload, Input, Form, FormWrapper, TextArea, Button } from './ApplyForJobElements'
 import { PostDetailsContext } from '../../context/PostDetailscontext'
-import { useFormik, Formik } from 'formik';
+import { useFormik } from 'formik';
 import { WalletAddressContext } from '../../context/WalletAddressContext';
 import {baseURL} from '../../constants/Constants'
 import {useParams} from 'react-router-dom'
@@ -9,7 +9,7 @@ import axios from 'axios';
 const ApplyForJob = () => {
 
   const [walletAddress, ] = useContext(WalletAddressContext)
-  const [post, setPost] = useContext(PostDetailsContext)
+  const [post, ] = useContext(PostDetailsContext)
   const [candidiateDetails, setCandidiateDetails] = useState({})
 
   let canId = useParams()

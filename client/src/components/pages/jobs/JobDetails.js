@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { JobPostContext } from '../../context/JobPostContext'
+//import { JobPostContext } from '../../context/JobPostContext'
 import axios from 'axios'
 import { PostDetailsContext } from '../../context/PostDetailscontext'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -9,7 +9,7 @@ const JobDetails = () => {
 
     const [post, setPost] = useContext(PostDetailsContext)
     const [isPost, setIsPost] = useState(false)
-    const [walletAddress, ] = useContext(WalletAddressContext)
+    //const [walletAddress, ] = useContext(WalletAddressContext)
 
     let navigate = useNavigate();
     let jobid = useParams()
@@ -211,7 +211,7 @@ const JobDetails = () => {
                               <span>Website</span>
                             </td>
                             <td>
-                              <a href="#">{post.company_website}</a>
+                              <a href="Link">{post.company_website}</a>
                             </td>
                           </tr>
                         </tbody>
@@ -232,7 +232,7 @@ const JobDetails = () => {
           <div className="job-sidebar">
             <h3>Posted By</h3>
             <div className="posted-by">
-              <img src="assets/img/client-1.png" alt="client image" />
+              <img src="assets/img/client-1.png" alt="client_image" />
               <h4>John Doe</h4>
               <span>CEO of Tourt Design LTD</span>
             </div>
@@ -242,37 +242,38 @@ const JobDetails = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991517034!2d-74.25987556253516!3d40.697670063539654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1588772651198!5m2!1sen!2sbd"
               frameBorder={0}
+              title="gg"
             />
           </div>
           <div className="job-sidebar">
             <h3>Keywords</h3>
             <ul>
               <li>
-                <a href="#">Web Design</a>
+                <a href="link">Web Design</a>
               </li>
               <li>
-                <a href="#">Data Sceince</a>
+                <a href="link">Data Sceince</a>
               </li>
               <li>
-                <a href="#">SEO</a>
+                <a href="link">SEO</a>
               </li>
               <li>
-                <a href="#">Content Writter</a>
+                <a href="link">Content Writter</a>
               </li>
               <li>
-                <a href="#">Finance</a>
+                <a href="link">Finance</a>
               </li>
               <li>
-                <a href="#">Business</a>
+                <a href="link">Business</a>
               </li>
               <li>
-                <a href="#">Education</a>
+                <a href="link">Education</a>
               </li>
               <li>
-                <a href="#">Graphics</a>
+                <a href="link">Graphics</a>
               </li>
               <li>
-                <a href="#">Video</a>
+                <a href="link">Video</a>
               </li>
             </ul>
           </div>
@@ -280,22 +281,22 @@ const JobDetails = () => {
             <h3>Share In</h3>
             <ul>
               <li>
-                <a href="#" target="_blank">
+                <a href="link" target="_blank">
                   <i className="bx bxl-facebook" />
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="link" target="_blank">
                   <i className="bx bxl-twitter" />
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="link" target="_blank">
                   <i className="bx bxl-pinterest" />
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="link" target="_blank">
                   <i className="bx bxl-linkedin" />
                 </a>
               </li>
