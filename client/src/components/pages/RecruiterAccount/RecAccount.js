@@ -1,18 +1,61 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 
 import * as AccountComponents from './RecExport'
-
+import axios from 'axios'
 import { RecAccountContext } from '../../context/RecAccountContext'
+import { WalletAddressContext } from '../../context/WalletAddressContext';
+import { baseURL } from '../../constants/Constants';
 const RecAccount = () => {
 
     const [recAccountData, setRecAccountData] = useContext(RecAccountContext);
-
+    const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+    const [recData, setRecData] = useState({})
+   
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[recAccountData];
-        return <Com/>
+        return <Com data={recData}/>
     
     }
+
+  
+  
+  
+  const url = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`;
+  const fetchRecruiterdetails = async()=>{     
+    try {
+     
+      const {data} = await axios.get(url)
+      console.log("RecInfo", data)
+      setRecData(data)
+    } catch (error) {
+      console.log("error getting recruiter info", error)
+    }
+   
+
+  }
+
+  const applicantsUrl = `${baseURL}/api/recruiter/recGetApplication?addr=${walletAddress}`
+
+  const fetchApplicants = async()=>{
+    try {
+      const {data} = await axios.get(applicantsUrl)
+      console.log("Recruiter applicants", data)
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
+  useEffect(() => {
+  
+    if(walletAddress !== ""){
+       fetchRecruiterdetails()
+       fetchApplicants()
+    }
+    
+      
+    }, [walletAddress])
   return (
     <>
     <>
@@ -23,8 +66,8 @@ const RecAccount = () => {
         <div className="col-lg-3 col-md-12 col-sm-12 col-12">
           <div className="emp_dashboard_sidebar jb_cover">
             <div className="emp_web_profile jb_cover">
-              <img src="images/web.png" alt="post_img" />
-              <h4>Webstrot Technology</h4>
+              <img src={`${baseURL}/${recData.cover_logo}`} alt="post_img" />
+              <h4>{recData.company_name}</h4>
               <p>@Webstrot</p>
               <div className="skills jb_cover">
                 <div className="skill-item jb_cover">
@@ -40,12 +83,12 @@ const RecAccount = () => {
             <div className="emp_follow_link jb_cover">
               <ul className="feedlist">
                 <li>
-                  <a
-                    href="comp_employer_dashboard.html"
+                  <button
+                    onClick={()=>setRecAccountData('RecDashboard')}
                     className="link_active"
                   >
                     <i className="fas fa-tachometer-alt" /> dashboard{" "}
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <button onClick={()=>setRecAccountData('RecProfile')}>
@@ -55,41 +98,46 @@ const RecAccount = () => {
                   </button>
                 </li>
                 <li>
-                  <a href="comp_company_page.html">
+                  <button
+                  onClick={()=>setRecAccountData('CompanyPage')}
+                  >
                     <i className="fas fa-file" />
                     company page{" "}
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="comp_employer_manage_jobs.html">
+                  <button 
+                  onClick={()=>setRecAccountData('ManagedJobs')}
+                  >
                     <i className="fas fa-suitcase" />
                     manage jobs
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="comp_applications.html">
+                  <button 
+                  onClick={()=>setRecAccountData('Applications')}
+                  >
                     <i className="fas fa-mobile" />
                     applications
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="comp_post_new_job.html">
+                  <button
+                  onClick={()=>setRecAccountData('RecPostJobs')}
+                  >
                     <i className="fas fa-user-plus" />
                     post new job
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="message.html">
+                  <button
+                  onClick={()=>setRecAccountData('RecMessage')}
+                  >
                     <i className="fas fa-envelope" />
                     message
-                  </a>
+                  </button>
                 </li>
-                <li>
-                  <a href="pricing_plans.html">
-                    <i className="fas fa-tag" />
-                    pricing plans
-                  </a>
-                </li>
+               
               </ul>
               <ul className="feedlist logout_link jb_cover">
                 <li>

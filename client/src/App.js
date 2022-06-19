@@ -18,7 +18,9 @@ import Account from './components/pages/accounts/Account';
 import Resume from './components/pages/accounts/Resume';
 import Company from './components/pages/register/Company'
 import RecAccount from './components/pages/RecruiterAccount/RecAccount';
-
+import ApplyForJob from './components/pages/apply/ApplyForJob';
+import JobDetails from './components/pages/jobs/JobDetails'
+import LoginOption from './components/pages/auth/LoginOption';
 
 function App() {
   return (
@@ -40,8 +42,11 @@ function App() {
           <Route path="/sign-up" element={<SignUp/>}/>
           <Route path="/account" element={<Account/>}/>
           <Route path="/resume" element={<Resume/>}/>
-          <Route path="/company-registration" element={<Company/>}/>
+          <Route path="/apply/:canId" element={<ApplyForJob/>}/>
           <Route path="/recruiter-account" element={<RecAccount/>}/>
+          <Route path="/job-details/:id" element={<JobDetails/>}/>
+          <Route path="/login-options" element={<LoginOption/>}/>
+          
         </Routes>
         <Footer/>
    </Router>

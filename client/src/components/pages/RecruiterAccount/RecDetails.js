@@ -1,6 +1,7 @@
 import React from 'react'
+import { baseURL } from '../../constants/Constants'
 
-const RecDetails = () => {
+const RecDetails = (props) => {
   return (
     <>
      <div className="col-lg-9 col-md-12 col-sm-12 col-12">
@@ -10,7 +11,7 @@ const RecDetails = () => {
                 <div className="row">
                   <div className="col-lg-8 col-md-7 col-sm-12 col-12">
                     <div className="jp_job_post_side_img">
-                      <img src="images/ws.png" alt="post_img" />
+                      <img src={`${baseURL}/${props.data.cover_logo}`} alt="post_img" />
                     </div>
                     <div className="jp_job_post_right_cont">
                       <h4>Webstrot Technology</h4>

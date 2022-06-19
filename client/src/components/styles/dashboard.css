@@ -55,3 +55,47 @@ job_filter_category_sidebar jb_cover{
     color: green;
     
 }
+.postJobState h4{
+    text-align: center;
+    color: green;
+}
+
+.browse_img_banner {
+    border: 1px solid #e2e2e2;
+    border-top: 0;
+    padding: 70px;
+}
+.browse_img_banner .jp_job_post_side_img img {
+    width: 20%;
+}
+.latest_job_overlow {
+    max-width: 1500px;
+}
+.latest_job_box {
+    border: 1px solid #e2e2e2;
+    
+    margin-bottom: 30px;
+    height: 100px;
+    
+}
+.theme-btn .default-btn button{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Catamaran", sans-serif;
+    background: #fd1616;
+    color: #ffffff;
+    margin-right: 15px;
+    border: 1px solid transparent;
+    padding: 10px 25px;
+    display: inline-block;
+}
+
+.looking-job .media .media-body button {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.recruiting-card .media .media-body button{
+    color: #ffffff;
+    font-size: 15px;
+}

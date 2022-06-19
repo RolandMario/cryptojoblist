@@ -4,7 +4,10 @@ import App from './App';
 import { AccountProvider } from './components/context/AccountContext';
 import { RecAccountProvider } from './components/context/RecAccountContext';
 import { WalletAddressProvider } from './components/context/WalletAddressContext';
+import { SignInProvider } from './components/context/SignInContext';
 import reportWebVitals from './reportWebVitals';
+import {JobPostProvider} from './components/context/JobPostContext';
+import { PostDetailsProvider } from './components/context/PostDetailscontext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +15,16 @@ root.render(
     <AccountProvider>
       <WalletAddressProvider>
         <RecAccountProvider>
-          <App /> 
+          <SignInProvider>
+            <JobPostProvider>
+              <PostDetailsProvider>
+                <App />  
+              </PostDetailsProvider>
+              
+            </JobPostProvider>
+            
+          </SignInProvider>
+         
         </RecAccountProvider>
        
       </WalletAddressProvider>

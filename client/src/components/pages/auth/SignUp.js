@@ -4,9 +4,8 @@ import { useFormik } from 'formik';
 import { useNavigate} from 'react-router-dom'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
 import axios from 'axios'
+import {baseURL} from '../../constants/Constants'
 const SignUp = () => {
-
-
 
   let initialState ={
     isLoading: "",
@@ -76,7 +75,7 @@ const SignUp = () => {
   const changeStyleCand = () => {
     setStyleCandidiate("catSelected")
     setStyle("cat");
-    setCategory("candidiate")
+    setCategory("Candidiate")
  };
  
 
@@ -90,8 +89,8 @@ const SignUp = () => {
       },
       onSubmit: async(values)=>{
         dispatch({type:'signup'})
-        const baseURL = 'http://176.58.122.154:8800' ||'http://localhost:8800'
-        const url = `${baseURL}/api/recruiter/addRecruiter`
+        
+       
         
           let signupData = {
             "username":values.username,
@@ -102,12 +101,16 @@ const SignUp = () => {
           
           try {
           if(category === "Recruiter"){
-          
+            const url = `${baseURL}/api/recruiter/addRecruiter`
           const {data} = await axios.post(url, signupData)
           console.log("return fron db",data)
             dispatch({type: "secceed"})
               navigate("/recruiter-account")
-            }else{
+            }else if(category === "Candidiate"){
+              const url = `${baseURL}/api/recruiter/addCandidiate`
+              const {data} = await axios.post(url, signupData)
+              console.log("return fron db",data)
+              dispatch({type: "secceed"})
               navigate('/account')
             }
               
@@ -118,6 +121,7 @@ const SignUp = () => {
             
           else{
             dispatch({type: 'failure'})
+            console.log("print error", error);
           }
              
         }

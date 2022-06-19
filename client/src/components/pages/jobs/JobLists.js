@@ -1,7 +1,36 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
-
+import { WalletAddressContext } from '../../context/WalletAddressContext'
+import axios from  'axios'
+import { JobPostContext } from '../../context/JobPostContext'
+import {useNavigate} from 'react-router-dom'
+import { baseURL } from '../../constants/Constants'
 const JobLists = () => {
+
+let navigate = useNavigate();
+
+const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+const [jobPostData, setJobPostData] = useContext(JobPostContext)
+
+
+const getjobPosts = async()=>{
+ 
+  const url = `${baseURL}/api/recruiter/getAllJobPosts`;
+  const {data} = await axios.get(url)
+ 
+  setJobPostData(data.rows)
+
+}
+
+useEffect(() => {
+  
+  
+     getjobPosts()
+  
+  
+    
+  }, [])
+ 
   return (
     <>
     <div>
@@ -33,7 +62,9 @@ const JobLists = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
               </div>
               <div className="row">
-                <div className="col-lg-12">
+                {jobPostData?.map((post, index)=>{
+                  return(
+                  <div className="col-lg-12" key={post.id}>
                   <div className="job-card-two">
                     <div className="row align-items-center">
                       <div className="col-md-1">
@@ -46,361 +77,42 @@ const JobLists = () => {
                       <div className="col-md-8">
                         <div className="job-info">
                           <h3>
-                            <a href="job-details.html">Web Designer, Graphic Designer, UI/UX Designer</a>
+                            <a href="job-details.html">{post.job_title}</a>
                           </h3>
                           <ul>                                          
                             <li>
                               <i className="bx bx-briefcase" />
-                              Graphics Designer
+                              {post.job_title}
                             </li>
                             <li>
                               <i className="bx bx-briefcase" />
-                              $35000-$38000
+                              {post.salary}
                             </li>
                             <li>
                               <i className="bx bx-location-plus" />
-                              Wellesley Rd, London
+                              {post.company_location}
                             </li>
                             <li>
                               <i className="bx bx-stopwatch" />
                               9 days ago
                             </li>
                           </ul>
-                          <span>Full Time</span>
+                          <span>{post.job_type}</span>
                         </div>
                       </div>
                       <div className="col-md-3">
                         <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
+                          <button onClick={()=>{navigate(`/job-details/${post.id}`)}} className="default-btn">
                             Browse Job
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/2.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Website Developer &amp; Software Developer</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Web Developer
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $3000-$8000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Garden Road, UK
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              5 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/3.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Application Developer &amp; Web Designer</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              App Developer
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $3000-$4000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              State City, USA
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              8 days ago
-                            </li>
-                          </ul>
-                          <span>Part-Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/4.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Frontend &amp; Backend Developer</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Web Developer
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $5000-$8000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Drive Post NY 676
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              1 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/5.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">IT Department &amp; Manager</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Manager
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $35000-$38000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Wellesley Rd, London
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              7 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/6.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Office Assistant</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Manager
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $10000-$12000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Wellesley Rd, London
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              9 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/1.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Accountants</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Finance
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $5000-$8000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Green View, Australia
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              2 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="job-card-two">
-                    <div className="row align-items-center">
-                      <div className="col-md-1">
-                        <div className="company-logo">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/2.png" alt="logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-md-8">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Budget Analysts</a>
-                          </h3>
-                          <ul>                                          
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Data Science
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              $3000-$8000
-                            </li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Park Road, UK
-                            </li>
-                            <li>
-                              <i className="bx bx-stopwatch" />
-                              3 days ago
-                            </li>
-                          </ul>
-                          <span>Full Time</span>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="theme-btn text-end">
-                          <a href="job-details.html" className="default-btn">
-                            Browse Job
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
+               
               </div>
               <nav aria-label="Page navigation example">
                 <ul className="pagination justify-content-center">

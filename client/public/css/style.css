@@ -2186,7 +2186,7 @@ ul{
 	margin-bottom:10px;
 }
 .latest_job_overlow{
-	width:825px;
+	max-width:1500px;
 }
 .job_list_next{
 	float:left;

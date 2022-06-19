@@ -3,18 +3,17 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import Web3 from 'web3'
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
+import { SignInContext } from '../../context/SignInContext'
 const TopBar = () => {
 
- let param = useParams();
-
-
- console.log("param object",param)
-
 const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+const [isSignIn, setIsSignIn] = useContext(SignInContext)
 
 const [, setIsAddress] = useState(false)
 
 let navigate = useNavigate()
+
+
   const walletConnect = async()=>{
     try {
       if (window.ethereum) {
@@ -34,6 +33,7 @@ let navigate = useNavigate()
       console.log(error)
     }
   }
+
   const signIn = async()=>{
     try {
       if (window.ethereum) {
@@ -45,19 +45,9 @@ let navigate = useNavigate()
           const accounts = await web3.eth.getAccounts();
           console.log(accounts[0])
           setWalletAddress(accounts[0]);
-          
 
-          //verify address from the db using wallet address as the parameter
-          const baseURL = 'http://176.58.122.154:8800' || "http://localhost:8800"
-         
-          const url = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
-          const {data} = await axios.get(url)
-         
-          //if found
-          if(data)
-         
-        navigate("/account")
-        //else: {catch the error} user not found sign up for new user
+          navigate("/login-options")
+        
       }
       
     } catch (error) {
@@ -147,7 +137,7 @@ useEffect(() => {
                     </ul>
                     <div className="other-option">
                       <button  className="signup-btn" onClick={
-                        ()=>walletConnect()
+                        ()=>{walletConnect();}
                         
                         }>Sign Up</button>
                       <button className="signin-btn"
@@ -156,7 +146,7 @@ useEffect(() => {
                       }
                       >Sign In</button>
                     </div>
-                    {/* {isAddress?<p>wallet address</p>:<p></p>} */}
+                    {walletAddress}
                   </div>
                 </nav>
               </div>

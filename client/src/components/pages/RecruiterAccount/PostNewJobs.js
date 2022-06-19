@@ -4,157 +4,136 @@ import { useFormik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
 import { baseURL } from '../../constants/Constants';
-//'http://176.58.122.154:8800' ||
-const PostJobs = () => {
 
-  let initialState ={
-    isLoading: "",
-    success: "",
-    existed: "",
-    failed: ""
-  }
+const PostNewJobs = () => {
 
-  const postJobReducer = (state, action)=>{
-      switch (action.type) {
-        case "authenticate":{
+    let initialState ={
+        isLoading: "",
+        success: "",
+        existed: "",
+        failed: ""
+      }
+    
+      const postJobReducer = (state, action)=>{
+          switch (action.type) {
+            case "authenticate":{
+              return{
+                  ...state,
+                  jobPosting: "",
+                  isLoading: "Authenticating..., pls wait!",
+                  success: "",
+                  failed: "",
+                  existed: ""
+                  
+              }
+          }
+          case "postJob":{
+            return{
+                ...state,
+                jobPosting: "persisting data into the database",
+                isLoading: "",
+                success: "",
+                failed: "",
+                existed: ""
+                
+            }
+        }
+        case "succeeded":{
           return{
               ...state,
               jobPosting: "",
-              isLoading: "Authenticating..., pls wait!",
-              success: "",
-              failed: "",
+              success: "Successful",
+              isLoading: "",
+              failed:"",
               existed: ""
-              
           }
       }
-      case "postJob":{
+      case "failure":{
         return{
             ...state,
-            jobPosting: "persisting data into the database",
-            isLoading: "",
+            jobPosting: "",
             success: "",
-            failed: "",
+            isLoading: "",
+            failed:" User Not found",
             existed: ""
-            
         }
     }
-    case "succeeded":{
-      return{
-          ...state,
-          jobPosting: "",
-          success: "Successful",
-          isLoading: "",
-          failed:"",
-          existed: ""
+            default:
+              return state
+          }
       }
-  }
-  case "failure":{
-    return{
-        ...state,
-        jobPosting: "",
-        success: "",
-        isLoading: "",
-        failed:" User Not found",
-        existed: ""
-    }
-}
-        default:
-          return state
-      }
-  }
-  
-  const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
-  const [state, dispatch] = useReducer(postJobReducer, initialState)
-  const formik = useFormik({
-    initialValues:{
-  
-      job_title: "",
-      category: "",
-      company_name: "",
-      company_email: "",
-      company_website: "",
-      company_location: "",
-      job_type: "",
-      job_tag: "",
-      salary: "",
-      experience: "",
-      job_desc: "",
-      job_req: ""
-
-    },
-    onSubmit: async(values)=>{
-      dispatch({type: "authenticate"})
       
-      const url = `${baseURL}/api/recruiter/addJobPost?addr=${walletAddress}`
-      
-        let jobPostDetails = {
-          "job_title":values.job_title,
-          "category": values.category,
-          "company_name": values.company_name,
-          "company_email": values.company_email,
-          "company_website":values.company_website,
-          "company_location": values.company_location,
-          "job_type": values.job_type,
-          "job_tag": values.job_tag,
-          "salary":values.salary,
-          "experience": values.experience,
-          "job_desc": values.job_desc,
-          "job_req": values.job_req,
-          "walletAddress": walletAddress
-        }
-        try {
-          const urlfetch = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
-          const {data} = await axios.get(urlfetch)
-          if(data){
+      const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
+      const [state, dispatch] = useReducer(postJobReducer, initialState)
+      const formik = useFormik({
+        initialValues:{
+          job_title: "",
+          category: "",
+          company_name: "",
+          company_email: "",
+          company_website: "",
+          company_location: "",
+          job_type: "",
+          job_tag: "",
+          salary: "",
+          experience: "",
+          job_desc: ""
+    
+        },
+        onSubmit: async(values)=>{
+          dispatch({type: "authenticate"})
+         
+          const url = `${baseURL}/api/recruiter/addJobPost`
+          
+            let jobPostDetails = {
+              "job_title":values.job_title,
+              "category": values.category,
+              "company_name": values.company_name,
+              "company_email": values.company_email,
+              "company_website":values.company_website,
+              "company_location": values.company_location,
+              "job_type": values.job_type,
+              "job_tag": values.job_tag,
+              "salary":values.salary,
+              "experience": values.experience,
+              "job_desc": values.job_desc,
+              "walletAddress": walletAddress
+              
+            }
             try {
-              dispatch({type:'postJob'})
-              const {data} = await axios.post(url, jobPostDetails)
-              dispatch({type:'succeeded'})
+              const urlfetch = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
+              const {data} = await axios.get(urlfetch)
+              if(data){
+                try {
+                  dispatch({type:'postJob'})
+                  const {data} = await axios.post(url, jobPostDetails)
+                  dispatch({type:'succeeded'})
+                } catch (error) {
+                  if(error.response.status === 400){
+                    console.log("Yeah Error")
+                  }else{
+                    console.log("something went wrong, Try again")
+                  }
+                }
+                
+              }
             } catch (error) {
               if(error.response.status === 400){
-                console.log("Yeah Error")
+               dispatch({type:'failure'})
               }else{
                 console.log("something went wrong, Try again")
               }
             }
-            
-          }
-        } catch (error) {
-          if(error.response.status === 400){
-           dispatch({type:'failure'})
-          }else{
-            console.log("something went wrong, Try again")
-          }
+    
         }
-
-    }
-  })
+      })
   return (
     <>
-    <div>
-          {/* Page Title Start */}
-          {console.log(walletAddress)}
-          <section className="page-title title-bg3">
-            <div className="d-table">
-              <div className="d-table-cell">
-                <h2>Post a Job</h2>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>Post a Job</li>
-                </ul>
-              </div>
-            </div>
-            <div className="lines">
-              <div className="line" />
-              <div className="line" />
-              <div className="line" />
-            </div>
-          </section>
-          {/* Page Title End */}
-          {/* Post Job Section Start */}
-          <div className="job-post ptb-100">
+    <div className="col-lg-9 col-md-12 col-sm-12 col-12">
+    <div className="row">
+    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+     {/* Post Job Section Start */}
+     <div className="job-post ptb-100">
             <div className="container">
               <form onSubmit={formik.handleSubmit} className="job-post-from">
                 <h2>Fill Up Your Job information</h2>
@@ -256,13 +235,6 @@ const PostJobs = () => {
                       className="form-control description-area" id="exampleFormControlTextarea1" rows={6} placeholder="Job Description" required  />
                     </div>
                   </div>
-                  <div className="col-md-12">
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlTextarea1">Job Requirements</label>
-                      <textarea name="job_req" value={formik.values.job_req} onChange={formik.handleChange} 
-                      className="form-control description-area" id="exampleFormControlTextarea1" rows={6} placeholder="Well formatted job requirements" required  />
-                    </div>
-                  </div>
                   <div className='postJobState'>
                     <h4>{state.isLoading }{state.success}{state.failed}{state.existed}{state.jobPosting}</h4>
                   </div>
@@ -277,33 +249,11 @@ const PostJobs = () => {
             </div>
           </div>
           {/* Post Job Section End */}
-          {/* Subscribe Section Start */}
-          <section className="subscribe-section">
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-md-6">
-                  <div className="section-title">
-                    <h2>Get New Job Notifications</h2>
-                    <p>Subscribe &amp; get all related jobs notification</p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <form className="newsletter-form" data-toggle="validator">
-                    <input type="email" className="form-control" placeholder="Enter your email" name="EMAIL" required autoComplete="off" />
-                    <button className="default-btn sub-btn" type="submit">
-                      Subscribe
-                    </button>
-                    <div id="validator-newsletter" className="form-result" />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      
+    </div>
+    </div>
+    </div>
     </>
   )
 }
 
-export default PostJobs
-
+export default PostNewJobs
