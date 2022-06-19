@@ -1,6 +1,7 @@
 const recruiterController = require('../controller/RecruiterController.js')
 const jobController = require('../controller/JobController')
 const applicationController = require('../controller/ApplicationController')
+const message = require('../controller/Message')
 const multer = require('multer')
 
 
@@ -40,6 +41,7 @@ const resume = multer({
     }
 })
 // use routers
+router.get('/message', message.Message)
 router.get('/getRecruiter',  recruiterController.getRecruiter)
 router.get('/getCandidiate/:canId',  recruiterController.getCandidiate)
 router.get('/getCandidiateByQuery', recruiterController.getCandidiateByQuery)
