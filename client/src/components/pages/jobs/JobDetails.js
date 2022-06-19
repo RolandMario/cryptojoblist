@@ -3,7 +3,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 import { PostDetailsContext } from '../../context/PostDetailscontext'
 import { useParams, useNavigate } from 'react-router-dom'
-import { WalletAddressContext } from '../../context/WalletAddressContext'
+//import { WalletAddressContext } from '../../context/WalletAddressContext'
 import { baseURL } from '../../constants/Constants'
 const JobDetails = () => {
 
@@ -30,8 +30,7 @@ const JobDetails = () => {
       }
       useEffect(() => {
         fetch()
-      
-        
+      // eslint-disable-next-line  
       }, [jobid.walletAddress])
 
       useEffect(()=>{

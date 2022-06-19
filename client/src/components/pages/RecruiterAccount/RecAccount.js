@@ -54,7 +54,7 @@ const RecAccount = () => {
        fetchApplicants()
     }
     
-      
+     // eslint-disable-next-line 
     }, [walletAddress])
   return (
     <>

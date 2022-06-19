@@ -3,7 +3,7 @@ import { Link, useNavigate} from 'react-router-dom'
 import Web3 from 'web3'
 
 import { WalletAddressContext } from '../../context/WalletAddressContext'
-import { SignInContext } from '../../context/SignInContext'
+//import { SignInContext } from '../../context/SignInContext'
 const TopBar = () => {
 
 const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)

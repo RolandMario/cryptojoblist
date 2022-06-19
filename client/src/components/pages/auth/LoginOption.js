@@ -43,7 +43,7 @@ const LoginOption = () => {
     useEffect(() => {
         if(loginAs !=="")
       login()
-    
+    // eslint-disable-next-line
     }, [loginAs])
     
   return (

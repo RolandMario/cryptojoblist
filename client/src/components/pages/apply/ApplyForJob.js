@@ -30,8 +30,7 @@ const ApplyForJob = () => {
 
   useEffect(() => {
     getCandidiateDetails();
-  
-    
+  // eslint-disable-next-line
   }, [canId])
   
 

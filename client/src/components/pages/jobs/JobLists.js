@@ -27,9 +27,8 @@ useEffect(() => {
   
      getjobPosts()
   
-  
-    
-  }, [])
+  // eslint-disable-next-line
+     }, [])
  
   return (
     <>
