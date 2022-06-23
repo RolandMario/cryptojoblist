@@ -8,7 +8,7 @@ const db = require('../models')
 // create main Model
  const Recruiter = db.recruiters;
 const JobPost = db.jobPosts;
-
+const Application = db.applications;
 // main work
 
 const getAllJobs = async(req, res)=>{
@@ -46,9 +46,28 @@ const getJobPostById = async(req, res)=>{
 }
 
 
+const totalJobPostByRecruiter = async(req, res)=>{
+  try {
+    const { count, rows } = await JobPost.findAndCountAll({
+        where: {
+          recruiter_id: req.query.addr
+        },
+        include:[{model: Application, as: "applications"}]
+      });
+
+   res.status(200).send({rows: rows, count: count})
+   
+} catch (error) {
+    console.log(error)
+}
+
+}
+
+
 module.exports = {
     getAllJobs,
-    getJobPostById
+    getJobPostById,
+    totalJobPostByRecruiter
     
     
 }

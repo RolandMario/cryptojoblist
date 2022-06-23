@@ -1,8 +1,9 @@
 module.exports = {
-    HOST: '176.58.122.154',
-    USER: 'crypto_jobs',
-    PASSWORD: 'D@hS.PnE4KQ2Xb5',
-    DB: 'Test',
+    HOST: 'localhost',
+   // USER: 'crypto_jobs' D@hS.PnE4KQ2Xb5,
+   USER: 'root',
+    PASSWORD: 'root',
+    DB: 'cryptojobs',
     dialect: 'mysql',
 
     pool: {

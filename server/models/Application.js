@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {
           cv: {
             type: DataTypes.STRING,
             allowNull: true
+          },
+          recruiter_id: {
+            type: DataTypes.STRING,
+            allowNull: true
           }
          
       })

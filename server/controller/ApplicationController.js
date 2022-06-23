@@ -1,3 +1,4 @@
+const { applications } = require('../models');
 const db = require('../models')
 
 // image Upload
@@ -29,7 +30,8 @@ const postApplication = async(req, res)=>{
             linkedin: req.body.linkedin,
             city: req.body.city,
             candidiate_id: candidiate.walletAddress,
-            jobpost_id: jobpost.id
+            jobpost_id: jobpost.id,
+            recruiter_id: jobpost.walletAddress
         }
         const applicationData = await Application.create(applicationDetails)
         res.status(200).send(applicationData)
@@ -46,7 +48,7 @@ const getAppForRecruiter = async(req, res)=>{
 
 try {
     const recApp = await JobPost.findAll( {where: {recruiter_id : req.query.addr},
-         include:[{model: Application}]})
+         include:[{model: Application, as: "applications"}]})
          console.log("Applications belonging to a recruiter", recApp)
          res.status(200).send(recApp)
 } catch (error) {

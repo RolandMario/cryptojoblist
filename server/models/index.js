@@ -80,7 +80,6 @@ db.recruiters.hasMany(db.applications, {
     as: 'applications'
 })
 
-db.jobPosts.belongsToMany(db.applications, {through: "post_app"})
-db.applications.belongsToMany(db.jobPosts, {through: "post_app"})
+
 
 module.exports = db

@@ -1,7 +1,33 @@
-import React from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import { baseURL } from '../../constants/Constants'
+import { WalletAddressContext } from '../../context/WalletAddressContext';
+import axios from 'axios'
 
 const RecDetails = (props) => {
+  const [walletAddress, ] = useContext(WalletAddressContext)
+  const url = `${baseURL}/api/recruiter/totalJobPostByRecruiter?addr=${walletAddress}`;
+  const [totalPost, setTotalPost] = useState(1)
+  const getTotalJobPosts = async()=>{     
+    try {
+     
+      const {data} = await axios.get(url)
+      console.log("total job post", data)
+      setTotalPost(data.count)
+    } catch (error) {
+      console.log("error getting job post", error)
+    }
+   
+
+  }
+
+  useEffect(() => {
+  
+    if(walletAddress !== ""){
+      getTotalJobPosts()
+    }
+    
+     // eslint-disable-next-line 
+    }, [walletAddress])
   return (
     <>
      <div className="col-lg-9 col-md-12 col-sm-12 col-12">
@@ -43,7 +69,7 @@ const RecDetails = (props) => {
                   <i className="fas fa-book" />
                 </div>
                 <div className="emp_job_side_text">
-                  <h1>360</h1>
+                  <h1>{totalPost}</h1>
                   <p>job posted</p>
                 </div>
               </div>
