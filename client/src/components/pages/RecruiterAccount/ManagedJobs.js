@@ -1,6 +1,8 @@
 import React from 'react'
 
-const ManagedJobs = () => {
+const ManagedJobs = ({jobApplicants}) => {
+
+  console.log("managed jobs",jobApplicants)
   return (
     <>
     <>
@@ -24,19 +26,20 @@ const ManagedJobs = () => {
                 <h6>action</h6>
               </div>
             </div>
-            <div className="latest_job_box jb_cover">
+            {jobApplicants?.map((jobApplicant, index)=>{
+              return(<div className="latest_job_box jb_cover">
               <div className="job_list">
                 <h6>
-                  <a href="link">General Ledger Accountant</a>
+                  <a href="link">{jobApplicant.job_title}</a>
                 </h6>
                 <p>
                   {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
+                  <i className="far fa-calendar" /> Date Posted : {new Date(jobApplicant.updatedAt).toDateString()}
                 </p>
               </div>
               <div className="job_list_next">
                 <p>
-                  <a href="link">06 Applications</a>
+                  <a href="link">{`${jobApplicant.applications.length} Applications`}</a>
                 </p>
               </div>
               <div className="job_list_next">
@@ -61,235 +64,10 @@ const ManagedJobs = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">General Ledger Accountant</a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">12 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="pen">pending</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">Land Development Marketer</a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">07 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="ex">expired</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">General Ledger Accountant</a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">66 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="gn">active</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">Designer Required </a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">03 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="pen">pending</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">General Ledger Accountant</a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">66 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="gn">active</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list">
-                <h6>
-                  <a href="link">Land Development Marketer</a>
-                </h6>
-                <p>
-                  {" "}
-                  <i className="far fa-calendar" /> Date Posted : 02 Oct 2017
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p>
-                  <a href="link">16 Applications</a>
-                </p>
-              </div>
-              <div className="job_list_next">
-                <p className="ex">expired</p>
-              </div>
-              <div className="job_list_next">
-                <ul>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-eye" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-edit" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            </div>)
+            })}
+            
+            
             <div className="blog_pagination_section jb_cover">
               <ul>
                 <li>

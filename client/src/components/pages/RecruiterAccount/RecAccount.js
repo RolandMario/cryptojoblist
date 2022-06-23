@@ -10,11 +10,11 @@ const RecAccount = () => {
     const [recAccountData, setRecAccountData] = useContext(RecAccountContext);
     const [walletAddress, ] = useContext(WalletAddressContext)
     const [recData, setRecData] = useState({})
-   
+   const [recJobsApplicantsData, setRecJobsApplicantsData] = useState(null)
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[recAccountData];
-        return <Com data={recData}/>
+        return <Com data={recData} jobApplicants={recJobsApplicantsData}/>
     
     }
 
@@ -41,6 +41,7 @@ const RecAccount = () => {
     try {
       const {data} = await axios.get(applicantsUrl)
       console.log("Recruiter applicants", data)
+      setRecJobsApplicantsData(data)
     } catch (error) {
       console.log(error)
       
@@ -68,7 +69,7 @@ const RecAccount = () => {
             <div className="emp_web_profile jb_cover">
               <img src={`${baseURL}/${recData.cover_logo}`} alt="post_img" />
               <h4>{recData.company_name}</h4>
-              <p>@Webstrot</p>
+              <p>@{recData.username}</p>
               <div className="skills jb_cover">
                 <div className="skill-item jb_cover">
                   <h6>

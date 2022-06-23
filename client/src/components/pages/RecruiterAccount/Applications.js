@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Applications = () => {
+const Applications = ({jobApplicants}) => {
+
+  var merged = [].concat.apply([], jobApplicants);
+  console.log("flattening an array",merged)
   return (
     <>
   {/*employee dashboard wrapper start*/}
@@ -14,7 +17,10 @@ const Applications = () => {
                 <h6>recent applications</h6>
               </div>
             </div>
-            <div className="latest_job_box jb_cover">
+            {jobApplicants?.map((jobapplicant, index)=>{
+              
+              return(
+                 <div className="latest_job_box jb_cover">
               <div className="job_list recent_app_1">
                 <div className="recent_img">
                   <img src="images/rs1.jpg" alt="post_img" />
@@ -26,7 +32,7 @@ const Applications = () => {
                   <ul>
                     <li>
                       <i className="fas fa-suitcase" />
-                      &nbsp; web designer
+                      &nbsp; Web Dev
                     </li>
                     <li>
                       <i className="flaticon-location-pointer" />
@@ -55,252 +61,11 @@ const Applications = () => {
                 </div>
               </div>
             </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs4.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">lumi simon</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; UI/UX designer
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs1.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">luca wallace</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; graphic designer
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs2.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">simmy jane</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; software firmr
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs3.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">luca wallace</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; web designer
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs4.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">joah due</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; UI/UX designer
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
-                <div className="recent_img">
-                  <img src="images/rs1.jpg" alt="post_img" />
-                </div>
-                <div className="recent_cntnt">
-                  <h6>
-                    <a href="link">david johnthn</a>
-                  </h6>
-                  <ul>
-                    <li>
-                      <i className="fas fa-suitcase" />
-                      &nbsp; software firm
-                    </li>
-                    <li>
-                      <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="job_list_next recent_app_1">
-                <div className="header_btn download_btn_wrapper jb_cover">
-                  <ul>
-                    <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="link">
-                        {" "}
-                        <i className="fas fa-envelope" />
-                        send
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              )
+            })}
+           
+           
+          
             <div className="blog_pagination_section jb_cover">
               <ul>
                 <li>

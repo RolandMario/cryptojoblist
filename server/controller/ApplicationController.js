@@ -18,7 +18,7 @@ const postApplication = async(req, res)=>{
 
     try {
         const candidiate = await Candidiate.findOne({where: {walletAddress: req.body.walletAddress}})
-        const jobpost = await JobPost.findOne({where: {walletAddress: req.query.postId}})
+        const jobpost = await JobPost.findOne({where: {id: req.query.postId}})
 
         let applicationDetails = {
             name:req.body.name,

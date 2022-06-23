@@ -7,6 +7,8 @@ const RecDetails = (props) => {
   const [walletAddress, ] = useContext(WalletAddressContext)
   const url = `${baseURL}/api/recruiter/totalJobPostByRecruiter?addr=${walletAddress}`;
   const [totalPost, setTotalPost] = useState(1)
+
+  console.log("recinfos", props.data)
   const getTotalJobPosts = async()=>{     
     try {
      
@@ -40,7 +42,7 @@ const RecDetails = (props) => {
                       <img src={`${baseURL}/${props.data.cover_logo}`} alt="post_img" />
                     </div>
                     <div className="jp_job_post_right_cont">
-                      <h4>Webstrot Technology</h4>
+                      <h4>{props.data.company_name}</h4>
                       <ul>
                         <li>
                           <i className="fas fa-suitcase" />
@@ -131,8 +133,8 @@ const RecDetails = (props) => {
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
-                        <li>categories:</li>
-                        <li>Design &amp; Creative</li>
+                        <li>Company Name:</li>
+                        <li>{props.data.company_name}</li>
                       </ul>
                     </div>
                   </div>
@@ -142,8 +144,8 @@ const RecDetails = (props) => {
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
-                        <li>Location:</li>
-                        <li>Los Angeles Califonia PO</li>
+                        <li>Location(Country):</li>
+                        <li>{`${props.data.city}, ${props.data.country}`}</li>
                       </ul>
                     </div>
                   </div>
@@ -154,7 +156,7 @@ const RecDetails = (props) => {
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
                         <li>Hotline::</li>
-                        <li>0145636941:</li>
+                        <li>{props.data.phone}</li>
                       </ul>
                     </div>
                   </div>
@@ -166,7 +168,7 @@ const RecDetails = (props) => {
                       <ul>
                         <li>email:</li>
                         <li>
-                          <a href="link">webstrot@example.com</a>
+                          <a href="link">{props.data.contact_mail}</a>
                         </li>
                       </ul>
                     </div>
@@ -178,7 +180,7 @@ const RecDetails = (props) => {
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
                         <li>compant size:</li>
-                        <li>20-50</li>
+                        <li>{props.data.company_size}</li>
                       </ul>
                     </div>
                   </div>
@@ -190,7 +192,7 @@ const RecDetails = (props) => {
                       <ul>
                         <li>website:</li>
                         <li>
-                          <a href="link">www.webstrot.com</a>
+                          <a href="link">{props.data.website}</a>
                         </li>
                       </ul>
                     </div>
