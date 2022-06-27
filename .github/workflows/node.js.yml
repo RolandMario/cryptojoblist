@@ -24,4 +24,4 @@ jobs:
         cd ../server
         npm i
         node index.js
-        systemctl reload nginx
+        
