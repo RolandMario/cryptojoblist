@@ -101,13 +101,13 @@ const SignUp = () => {
           
           try {
           if(category === "Recruiter"){
-            const url = `${baseURL}/api/recruiter/addRecruiter`
+            const url = `${baseURL}/server/recruiter/addRecruiter`
           const {data} = await axios.post(url, signupData)
           console.log("return fron db",data)
             dispatch({type: "secceed"})
               navigate("/recruiter-account")
             }else if(category === "Candidiate"){
-              const url = `${baseURL}/api/recruiter/addCandidiate`
+              const url = `${baseURL}/server/recruiter/addCandidiate`
               const {data} = await axios.post(url, signupData)
               console.log("return fron db",data)
               dispatch({type: "secceed"})

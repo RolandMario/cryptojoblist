@@ -19,11 +19,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/uploads', express.static('uploads'))
 app.use('/resumes', express.static('resumes'))
-app.use(express.static(path.join(__dirname, '../client/build')))
+
 
 // routers
 
-app.use('/api/recruiter', router)
+app.use('/server/recruiter', router)
 
 //static Images Folder
 
