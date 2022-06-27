@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express')
 const cors = require('cors')
 const router = require('./routes/routes.js')
-
+const path = require('path')
 const app = express()
 
 // middleware
@@ -19,6 +19,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/uploads', express.static('uploads'))
 app.use('/resumes', express.static('resumes'))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 // routers
 

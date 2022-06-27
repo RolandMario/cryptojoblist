@@ -1,9 +1,8 @@
 import React from 'react'
 
-const Applications = ({jobApplicants}) => {
+const Applications = ({applicatns}) => {
 
-  var merged = [].concat.apply([], jobApplicants);
-  console.log("flattening an array",merged)
+  
   return (
     <>
   {/*employee dashboard wrapper start*/}
@@ -17,37 +16,43 @@ const Applications = ({jobApplicants}) => {
                 <h6>recent applications</h6>
               </div>
             </div>
-            {jobApplicants?.map((jobapplicant, index)=>{
+            
               
-              return(
-                 <div className="latest_job_box jb_cover">
-              <div className="job_list recent_app_1">
+             
+                {applicatns.rows?.map((application)=>{ 
+           return (<>
+           <div className="latest_job_box jb_cover" key={application.id}>
+              
+                 <div className="job_list recent_app_1">
                 <div className="recent_img">
                   <img src="images/rs1.jpg" alt="post_img" />
                 </div>
                 <div className="recent_cntnt">
                   <h6>
-                    <a href="link">luca wallace</a>
+                    <a href="link">{application.name}</a>
                   </h6>
                   <ul>
                     <li>
                       <i className="fas fa-suitcase" />
-                      &nbsp; Web Dev
+                      &nbsp; {application.jobposts.job_title}
                     </li>
                     <li>
                       <i className="flaticon-location-pointer" />
-                      &nbsp; Los Angeles
+                      &nbsp; {application.city}
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className="job_list_next recent_app_1">
+              
+              
+                
+            </div>
+            <div className="job_list_next recent_app_1">
                 <div className="header_btn download_btn_wrapper jb_cover">
                   <ul>
                     <li>
                       <a href="link">
                         <i className="fas fa-file-download" />
-                        download info
+                        download Resume
                       </a>
                     </li>
                     <li>
@@ -59,10 +64,15 @@ const Applications = ({jobApplicants}) => {
                     </li>
                   </ul>
                 </div>
-              </div>
             </div>
-              )
-            })}
+              
+           </div>
+           </>
+           )
+              })}  
+             
+            
+          
            
            
           

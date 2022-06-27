@@ -11,10 +11,11 @@ const RecAccount = () => {
     const [walletAddress, ] = useContext(WalletAddressContext)
     const [recData, setRecData] = useState({})
    const [recJobsApplicantsData, setRecJobsApplicantsData] = useState(null)
+   const [applications, setApplications] = useState(null)
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[recAccountData];
-        return <Com data={recData} jobApplicants={recJobsApplicantsData}/>
+        return <Com data={recData} jobApplicants={recJobsApplicantsData} applicatns={applications}/>
     
     }
 
@@ -48,11 +49,27 @@ const RecAccount = () => {
     }
   }
 
+  //get applications then includes jobposts, the upper one is get jobposts includes applications
+
+  const applicantionsUrl = `${baseURL}/api/recruiter/getApplications?addr=${walletAddress}`
+
+  const fetchApplicantions = async()=>{
+    try {
+      const {data} = await axios.get(applicantionsUrl)
+      console.log("application for the recruiter", data)
+      setApplications(data)
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
   useEffect(() => {
   
     if(walletAddress !== ""){
        fetchRecruiterdetails()
        fetchApplicants()
+       fetchApplicantions()
     }
     
      // eslint-disable-next-line 

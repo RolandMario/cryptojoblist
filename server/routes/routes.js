@@ -49,6 +49,7 @@ router.get('/getAllJobPosts', jobController.getAllJobs)
 router.get('/getJobPostById/:id', jobController.getJobPostById)
 router.get('/recGetApplication', applicationController.getAppForRecruiter)
 router.get('/totalJobPostByRecruiter', jobController.totalJobPostByRecruiter)
+router.get('/getApplications', applicationController.getApplications)
 
 router.post('/addRecruiter',  recruiterController.addRecruiter)
 router.post('/addCandidiate', recruiterController.addCandidiate)

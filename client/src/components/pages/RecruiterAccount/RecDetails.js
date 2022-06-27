@@ -104,7 +104,7 @@ const RecDetails = (props) => {
                   <i className="fas fa-envelope-open-text" />
                 </div>
                 <div className="emp_job_side_text">
-                  <h1>1,608</h1>
+                  <h1>{0}</h1>
                   <p>total applications</p>
                 </div>
               </div>

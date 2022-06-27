@@ -26,8 +26,8 @@ const ManagedJobs = ({jobApplicants}) => {
                 <h6>action</h6>
               </div>
             </div>
-            {jobApplicants?.map((jobApplicant, index)=>{
-              return(<div className="latest_job_box jb_cover">
+            {jobApplicants?.map((jobApplicant)=>{
+              return(<div className="latest_job_box jb_cover" key={jobApplicant.id}>
               <div className="job_list">
                 <h6>
                   <a href="link">{jobApplicant.job_title}</a>

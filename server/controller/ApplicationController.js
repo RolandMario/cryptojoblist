@@ -56,9 +56,28 @@ try {
 }
 }
 
+
+const getApplications = async(req, res)=>{
+    try {
+      const { count, rows } = await Application.findAndCountAll({
+          where: {
+            recruiter_id: req.query.addr
+          },
+          include:{model: JobPost, as: "jobposts"}
+        });
+  
+     res.status(200).send({rows: rows, count: count})
+     
+  } catch (error) {
+      console.log(error)
+  }
+  
+  }
+
 module.exports = {
     postApplication,
     getAppForRecruiter,
+    getApplications
     
     
 }
