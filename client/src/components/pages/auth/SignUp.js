@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { useNavigate} from 'react-router-dom'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
 import axios from 'axios'
-import {baseURL} from '../../constants/Constants'
+//import {baseURL} from '../../constants/Constants'
 const SignUp = () => {
 
   let initialState ={
@@ -101,13 +101,13 @@ const SignUp = () => {
           
           try {
           if(category === "Recruiter"){
-            const url = `${baseURL}/server/recruiter/addRecruiter`
+            const url = `${process.env.REACT_APP_API_URL}/server/recruiter/addRecruiter`
           const {data} = await axios.post(url, signupData)
           console.log("return fron db",data)
             dispatch({type: "secceed"})
               navigate("/recruiter-account")
             }else if(category === "Candidiate"){
-              const url = `${baseURL}/server/recruiter/addCandidiate`
+              const url = `${process.env.REACT_APP_API_URL}/server/recruiter/addCandidiate`
               const {data} = await axios.post(url, signupData)
               console.log("return fron db",data)
               dispatch({type: "secceed"})
