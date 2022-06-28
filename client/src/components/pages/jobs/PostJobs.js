@@ -85,7 +85,7 @@ const PostJobs = () => {
     onSubmit: async(values)=>{
       dispatch({type: "authenticate"})
       
-      const url = `${baseURL}/api/recruiter/addJobPost?addr=${walletAddress}`
+      const url = `${process.env.REACT_APP_API_URL}/server/addJobPost?addr=${walletAddress}`
       
         let jobPostDetails = {
           "job_title":values.job_title,
@@ -103,7 +103,7 @@ const PostJobs = () => {
           "walletAddress": walletAddress
         }
         try {
-          const urlfetch = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
+          const urlfetch = `${process.env.REACT_APP_API_URL}/server/getRecruiter?addr=${walletAddress}`
           const {data} = await axios.get(urlfetch)
           if(data){
             try {
