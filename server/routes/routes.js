@@ -41,21 +41,21 @@ const resume = multer({
     }
 })
 // use routers
-router.get('/server/recruiter/message', message.WellcomeMessage)
-router.get('/getRecruiter',  recruiterController.getRecruiter)
-router.get('/getCandidiate/:canId',  recruiterController.getCandidiate)
-router.get('/getCandidiateByQuery', recruiterController.getCandidiateByQuery)
-router.get('/getAllJobPosts', jobController.getAllJobs)
-router.get('/getJobPostById/:id', jobController.getJobPostById)
-router.get('/recGetApplication', applicationController.getAppForRecruiter)
-router.get('/totalJobPostByRecruiter', jobController.totalJobPostByRecruiter)
-router.get('/getApplications', applicationController.getApplications)
+router.get('/server/message', message.WellcomeMessage)
+router.get('/server/getRecruiter',  recruiterController.getRecruiter)
+router.get('/server/getCandidiate/:canId',  recruiterController.getCandidiate)
+router.get('/server/getCandidiateByQuery', recruiterController.getCandidiateByQuery)
+router.get('/server/getAllJobPosts', jobController.getAllJobs)
+router.get('/server/getJobPostById/:id', jobController.getJobPostById)
+router.get('/server/recGetApplication', applicationController.getAppForRecruiter)
+router.get('/server/totalJobPostByRecruiter', jobController.totalJobPostByRecruiter)
+router.get('/server/getApplications', applicationController.getApplications)
 
-router.post('/addRecruiter',  recruiterController.addRecruiter)
-router.post('/addCandidiate', recruiterController.addCandidiate)
-router.post('/addJobPost', recruiterController.addJobPost)
-router.post('/submitApplication', resume.single('cv'), applicationController.postApplication)
+router.post('/server/addRecruiter',  recruiterController.addRecruiter)
+router.post('/server/addCandidiate', recruiterController.addCandidiate)
+router.post('/server/addJobPost', recruiterController.addJobPost)
+router.post('/server/submitApplication', resume.single('cv'), applicationController.postApplication)
 
-router.put('/updateRecruiter', upload.single('cover_logo'), recruiterController.updateRecruiterProfile)
+router.put('/server/updateRecruiter', upload.single('cover_logo'), recruiterController.updateRecruiterProfile)
 
 module.exports = router;
