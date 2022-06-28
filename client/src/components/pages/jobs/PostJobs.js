@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-import { baseURL } from '../../constants/Constants';
+
 //'http://176.58.122.154:8800' ||
 const PostJobs = () => {
 
