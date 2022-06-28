@@ -23,7 +23,7 @@ app.use('/resumes', express.static('resumes'))
 
 // routers
 
-app.use('/server/recruiter', router)
+app.use('/recruiter', router)
 
 //static Images Folder
 
