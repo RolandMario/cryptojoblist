@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express')
 const cors = require('cors')
-const router = require('./routes/routes.js')
+//const router = require('./routes/routes.js')
 const path = require('path')
 const app = express()
+const fns = require('./routes/routes.js')
 
 // middleware
 
@@ -22,8 +23,8 @@ app.use('/resumes', express.static('resumes'))
 
 
 // routers
-
-app.use('/recruiter', router)
+app.use(fns)
+//app.use('/recruiter', router)
 
 //static Images Folder
 

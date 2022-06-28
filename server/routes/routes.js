@@ -41,7 +41,7 @@ const resume = multer({
     }
 })
 // use routers
-router.get('/message', message.WellcomeMessage)
+router.get('/server/recruiter/message', message.WellcomeMessage)
 router.get('/getRecruiter',  recruiterController.getRecruiter)
 router.get('/getCandidiate/:canId',  recruiterController.getCandidiate)
 router.get('/getCandidiateByQuery', recruiterController.getCandidiateByQuery)
