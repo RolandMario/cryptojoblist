@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react'
 import { WalletAddressContext } from '../../context/WalletAddressContext'
 import axios from 'axios'
-import { baseURL } from '../../constants/Constants'
+
 import { useNavigate } from 'react-router-dom'
 
 const LoginOption = () => {
@@ -13,7 +13,7 @@ const LoginOption = () => {
     const login = async()=>{
         
         if(loginAs ===  "Recruiter"){
-            const url = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
+            const url = `${process.env.REACT_APP_API_URL}/server/getRecruiter?addr=${walletAddress}`
             try {
                 const {data} = await axios.get(url)
             if(data){
@@ -24,7 +24,7 @@ const LoginOption = () => {
             }
             
         }else if(loginAs === "Candidiate"){
-            const url = `${baseURL}/api/recruiter/getCandidiateByQuery?addr=${walletAddress}`
+            const url = `${process.env.REACT_APP_API_URL}/server/getCandidiateByQuery?addr=${walletAddress}`
             try {
                 const {data} = await axios.get(url)
                 if(data){

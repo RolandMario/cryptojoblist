@@ -39,7 +39,7 @@ const RecDetails = (props) => {
                 <div className="row">
                   <div className="col-lg-8 col-md-7 col-sm-12 col-12">
                     <div className="jp_job_post_side_img">
-                      <img src={`${baseURL}/${props.data.cover_logo}`} alt="post_img" />
+                      <img src={`${process.env.REACT_APP_API_URL}/${props.data.cover_logo}`} alt="post_img" />
                     </div>
                     <div className="jp_job_post_right_cont">
                       <h4>{props.data.company_name}</h4>

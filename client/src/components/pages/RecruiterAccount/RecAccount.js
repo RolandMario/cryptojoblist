@@ -4,7 +4,6 @@ import * as AccountComponents from './RecExport'
 import axios from 'axios'
 import { RecAccountContext } from '../../context/RecAccountContext'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-import { baseURL } from '../../constants/Constants';
 const RecAccount = () => {
 
     const [recAccountData, setRecAccountData] = useContext(RecAccountContext);
@@ -22,7 +21,7 @@ const RecAccount = () => {
   
   
   
-  const url = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`;
+  const url = `${process.env.REACT_APP_API_URL}/server/getRecruiter?addr=${walletAddress}`;
   const fetchRecruiterdetails = async()=>{     
     try {
      
@@ -36,7 +35,7 @@ const RecAccount = () => {
 
   }
 
-  const applicantsUrl = `${baseURL}/api/recruiter/recGetApplication?addr=${walletAddress}`
+  const applicantsUrl = `${process.env.REACT_APP_API_URL}/server/recGetApplication?addr=${walletAddress}`
 
   const fetchApplicants = async()=>{
     try {
@@ -51,7 +50,7 @@ const RecAccount = () => {
 
   //get applications then includes jobposts, the upper one is get jobposts includes applications
 
-  const applicantionsUrl = `${baseURL}/api/recruiter/getApplications?addr=${walletAddress}`
+  const applicantionsUrl = `${process.env.REACT_APP_API_URL}/server/getApplications?addr=${walletAddress}`
 
   const fetchApplicantions = async()=>{
     try {
@@ -84,7 +83,7 @@ const RecAccount = () => {
         <div className="col-lg-3 col-md-12 col-sm-12 col-12">
           <div className="emp_dashboard_sidebar jb_cover">
             <div className="emp_web_profile jb_cover">
-              <img src={`${baseURL}/${recData.cover_logo}`} alt="post_img" />
+              <img src={`${process.env.REACT_APP_API_URL}/${recData.cover_logo}`} alt="post_img" />
               <h4>{recData.company_name}</h4>
               <p>@{recData.username}</p>
               <div className="skills jb_cover">

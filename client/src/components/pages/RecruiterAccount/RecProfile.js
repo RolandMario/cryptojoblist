@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { useFormik, Formik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-import { baseURL } from '../../constants/Constants';
+
 
 const RecProfile = (props) => {
  
@@ -38,7 +38,7 @@ const RecProfile = (props) => {
     onSubmit: async(value)=>{
         console.log(value)
         
-        const url = `${baseURL}/api/recruiter/updateRecruiter`
+        const url = `${process.env.REACT_APP_API_URL}/server/updateRecruiter`
 
         let formData = new FormData()
         formData.append('cover_logo', value.cover_logo)
@@ -89,7 +89,7 @@ const RecProfile = (props) => {
       
         <div className="browse_img_banner jb_cover">
           <div className="jp_job_post_side_img">
-            <img src={`${baseURL}/${props.data.cover_logo}`} alt="post_img"  />
+            <img src={`${process.env.REACT_APP_API_URL}/${props.data.cover_logo}`} alt="post_img"  />
           </div>
           <div className="jp_job_post_right_cont edit_profile_wrapper">
             <h4>JPEG or PNG 1920x300px Cover Image</h4>

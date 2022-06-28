@@ -49,7 +49,7 @@ const ApplyForJob = () => {
     onSubmit: async(value)=>{
       console.log('working')
 
-      const url = `${baseURL}/api/recruiter/submitApplication?postId=${post.id}`
+      const url = `${process.env.REACT_APP_API_URL}/server/submitApplication?postId=${post.id}`
 
         let formData = new FormData()
         formData.append('name', value.name)

@@ -2,7 +2,7 @@ import React, {useContext, useReducer} from 'react'
 import { useFormik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-import { baseURL } from '../../constants/Constants';
+
 
 const PostNewJobs = () => {
 
@@ -82,7 +82,7 @@ const PostNewJobs = () => {
         onSubmit: async(values)=>{
           dispatch({type: "authenticate"})
          
-          const url = `${baseURL}/api/recruiter/addJobPost`
+          const url = `${process.env.REACT_APP_API_URL}/server/addJobPost`
           
             let jobPostDetails = {
               "job_title":values.job_title,
@@ -100,7 +100,7 @@ const PostNewJobs = () => {
               
             }
             try {
-              const urlfetch = `${baseURL}/api/recruiter/getRecruiter?addr=${walletAddress}`
+              const urlfetch = `${process.env.REACT_APP_API_URL}/server/getRecruiter?addr=${walletAddress}`
               const {data} = await axios.get(urlfetch)
               if(data){
                 try {

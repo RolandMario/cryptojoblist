@@ -1,5 +1,5 @@
 import React from 'react'
-import { TalentH1, ImgUpload, TalentSpan, TalentH3, TalentP, Input, Form, FormWrapper, TextArea, Button } from './TalentElements'
+import { TalentH1, ImgUpload, TalentH3, TalentP, Input, Form, FormWrapper, TextArea, Button } from './TalentElements'
 
 
 const Candidiate = () => {
