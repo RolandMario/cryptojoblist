@@ -3,6 +3,7 @@ const jobController = require('../controller/JobController')
 const applicationController = require('../controller/ApplicationController')
 const candidiateController = require('../controller/CandidiateController')
 const message = require('../controller/Message')
+const path = require('path')
 const multer = require('multer')
 
 
@@ -12,7 +13,7 @@ const router = require('express').Router()
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
         
-        cb(null, './uploads/')
+        cb(null, path.join(__dirname, '/uploads/'));
     },
     filename: function(req, file, cb){
         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
@@ -28,7 +29,7 @@ const upload = multer({
 const resumeStorage = multer.diskStorage({
     destination: function(req, file, cb){
         
-        cb(null, './resumes/')
+        cb(null, path.join(__dirname, '/resumes/'));
     },
     filename: function(req, file, cb){
         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
@@ -47,7 +48,7 @@ const resume = multer({
 const photoStorage = multer.diskStorage({
     destination: function(req, file, cb){
         
-        cb(null, './photos/')
+        cb(null, path.join(__dirname, '/photos/'));
     },
     filename: function(req, file, cb){
         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
