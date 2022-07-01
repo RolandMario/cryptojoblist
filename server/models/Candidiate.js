@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
           },
-          website: {
+          portfolio: {
             type: DataTypes.STRING,
             allowNull: true
           },
@@ -56,10 +56,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
           },
-          google: {
-            type: DataTypes.STRING,
-            allowNull: true
-          },
           twitter: {
             type: DataTypes.STRING,
             allowNull: true
@@ -68,7 +64,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
           },
+          facebook: {
+            type: DataTypes.STRING,
+            allowNull: true
+          },
           github: {
+            type: DataTypes.STRING,
+            allowNull: true
+          },
+          photo: {
             type: DataTypes.STRING,
             allowNull: true
           }

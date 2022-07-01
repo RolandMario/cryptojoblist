@@ -14,7 +14,8 @@ const RecAccount = () => {
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[recAccountData];
-        return <Com data={recData} jobApplicants={recJobsApplicantsData} applicatns={applications}/>
+        return <Com data={recData} jobApplicants={recJobsApplicantsData} applicatns={applications}
+        setRecAccountData={setRecAccountData}/>
     
     }
 

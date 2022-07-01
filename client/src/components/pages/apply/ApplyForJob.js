@@ -3,7 +3,7 @@ import { TalentH1, ImgUpload, Input, Form, FormWrapper, TextArea, Button } from 
 import { PostDetailsContext } from '../../context/PostDetailscontext'
 import { useFormik } from 'formik';
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-import {baseURL} from '../../constants/Constants'
+
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
 const ApplyForJob = () => {
@@ -14,7 +14,7 @@ const ApplyForJob = () => {
 
   let canId = useParams()
   const getCandidiateDetails = async()=>{
-    const url = `${baseURL}/api/recruiter/getCandidiate/${canId.canId}`
+    const url = `${process.env.REACT_APP_API_URL}/server/getCandidiate/${canId.canId}`
     try {
        const {data} = await axios.get(url)
        setCandidiateDetails(data)

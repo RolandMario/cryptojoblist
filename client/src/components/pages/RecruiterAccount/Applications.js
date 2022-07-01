@@ -19,7 +19,7 @@ const Applications = ({applicatns}) => {
             
               
              
-                {applicatns.rows?.map((application)=>{ 
+                {applicatns?.rows?.map((application)=>{ 
            return (<>
            <div className="latest_job_box jb_cover" key={application.id}>
               

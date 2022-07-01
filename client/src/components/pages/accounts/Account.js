@@ -1,21 +1,64 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 
-
+import { WalletAddressContext } from '../../context/WalletAddressContext'
 import * as AccountComponents from './AccountDetails'
 import { AccountContext } from '../../context/AccountContext'
 import DbFooter from './DbFooter'
-const Account = () => {
-    const [accountData, setAccountData] = useContext(AccountContext);
+import axios from 'axios'
 
+const Account = ({children, ...restprops}) => {
+    const [accountData, setAccountData] = useContext(AccountContext);
+    const [candidiateProfile, setCandidiateProfile] = useState(null)
+    const [jobCount, setJobCount] = useState(0)
+    const [walletAddress, ] = useContext(WalletAddressContext)
+    const [candidiateApplication, setCandidiateApplication] = useState(null)
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[accountData];
-        return <Com/>
+        return <Com candidiateProfile={candidiateProfile} candidiateApplication={candidiateApplication} jobCount={jobCount}/>
     
     }
+
+   
+
+    const fetchCandidiateApplications = async()=>{
+      try {
+        const url = `${process.env.REACT_APP_API_URL}/server/getCandidiateApplications?addr=${walletAddress}`;
+        const {data} = await axios.get(url)
+        console.log("Application Info", data)
+        setCandidiateApplication(data.rows)
+        setJobCount(data.count)
+      } catch (error) {
+        console.log("error getting application info", error)
+      }
+     
+  
+    }
+
+    const fetchCandidiateProfile = async()=>{
+      try {
+        const url = `${process.env.REACT_APP_API_URL}/server/getCandidiateProfile?addr=${walletAddress}`;
+        const {data} = await axios.get(url)
+        console.log("CanInfo", data)
+        setCandidiateProfile(data)
+      } catch (error) {
+        console.log("error getting recruiter info", error)
+      }
+     
+  
+    }
+    
+
+    useEffect(() => {
+      if(walletAddress !== ""){
+        fetchCandidiateProfile();
+        fetchCandidiateApplications();
+     }// eslint-disable-next-line
+    }, [walletAddress])
+    
   return (
    
-      <>
+      <div >
   {/*employee dashboard wrapper start*/}
   <div className="candidate_dashboard_wrapper jb_cover">
     <div className="container">
@@ -23,13 +66,13 @@ const Account = () => {
         <div className="col-lg-3 col-md-12 col-sm-12 col-12">
           <div className="emp_dashboard_sidebar jb_cover">
             <img
-              src="images/profile.jpg"
+              src={`${process.env.REACT_APP_API_URL}/${candidiateProfile?.photo}`}  
               className="img-responsive"
               alt="post_img"
             />
             <div className="emp_web_profile candidate_web_profile jb_cover">
-              <h4>luca wallace</h4>
-              <p>@username</p>
+              <h4>{candidiateProfile?.name}</h4>
+              <p>@{candidiateProfile?.username}</p>
               <div className="skills jb_cover">
                 <div className="skill-item jb_cover">
                   <h6>
@@ -55,18 +98,7 @@ const Account = () => {
                     Edit profile
                   </button>
                 </li>
-                <li>
-                  <a href="candidate_resume.html">
-                    <i className="fas fa-file" />
-                    resume{" "}
-                  </a>
-                </li>
-                <li>
-                  <a href="candidate_favourite_job.html">
-                    <i className="fas fa-heart" />
-                    favourite
-                  </a>
-                </li>
+          
                 <li>
                   <button onClick={()=>setAccountData('AppliedJobs')}>
                     <i className="fas fa-check-square" />
@@ -79,12 +111,7 @@ const Account = () => {
                     message
                   </button>
                 </li>
-                <li>
-                  <a href="pricing_plans.html">
-                    <i className="fas fa-tag" />
-                    pricing plans
-                  </a>
-                </li>
+               
               </ul>
               <ul className="feedlist logout_link jb_cover">
                 <li>
@@ -148,14 +175,13 @@ const Account = () => {
           </div>
         </div>
       {renderAccountComponents()}
+     
       </div>
     </div>
   </div>
 
   <DbFooter/>
-</>
-    
-   
+</div>  
   )
 }
 

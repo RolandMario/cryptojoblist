@@ -3,8 +3,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 import { PostDetailsContext } from '../../context/PostDetailscontext'
 import { useParams, useNavigate } from 'react-router-dom'
-//import { WalletAddressContext } from '../../context/WalletAddressContext'
-import { baseURL } from '../../constants/Constants'
+
 const JobDetails = () => {
 
     const [post, setPost] = useContext(PostDetailsContext)
@@ -14,10 +13,9 @@ const JobDetails = () => {
     let navigate = useNavigate();
     let jobid = useParams()
     console.log(jobid)
+
     const fetch = async()=>{
-      
- 
-        const url = `${baseURL}/api/recruiter/getJobPostById/${jobid.id}`
+        const url = `${process.env.REACT_APP_API_URL}/server/getJobPostById/${jobid.id}`
         try {
            const {data} = await axios.get(url)
         console.log('job Details', data)
@@ -51,7 +49,7 @@ const JobDetails = () => {
         <h2>Job Details</h2>
         <ul>
           <li>
-            <a href="index.html">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>Job Details</li>
         </ul>

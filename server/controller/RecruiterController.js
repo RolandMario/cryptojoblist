@@ -160,6 +160,12 @@ const getCandidiateByQuery = async(req, res)=>{
 
  }
 
+ const getCompanyProfile = async(req, res)=>{
+  const { count, rows }  = await Recruiter.findAndCountAll({});
+
+  res.status(200).send({count, rows})
+ }
+
 module.exports = {
     addRecruiter,
     addCandidiate,
@@ -167,7 +173,8 @@ module.exports = {
     getCandidiate,
     getCandidiateByQuery,
     addJobPost,
-    updateRecruiterProfile
+    updateRecruiterProfile,
+    getCompanyProfile
     
     
 }

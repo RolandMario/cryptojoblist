@@ -1,7 +1,29 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { JobPostContext } from '../../context/JobPostContext'
+
+
+
 
 const FindJobs = () => {
+
+  const [jobPostData,] = useContext(JobPostContext)
+  const JobCategory = (props)=>{
+    console.log(props)
+    return (
+      <>
+       <div className="col-lg-3 col-sm-6">
+        <a href="job-list.html">
+          <div className="category-item">
+            <i className="flaticon-wrench-and-screwdriver-in-cross" />
+            <h3>{props.category}</h3>
+            <p>{props.numOfPost} new Job</p>
+          </div>
+        </a>
+      </div>
+      </>
+    )
+  }
   return (
     <>
      <div>
@@ -45,11 +67,14 @@ const FindJobs = () => {
                   <div className="col-lg-3">
                     <select className="category">
                       <option data-display="Category">Category</option>
-                      <option value={1}>Web Development</option>
-                      <option value={2}>Graphics Design</option>
-                      <option value={4}>Data Entry</option>
-                      <option value={5}>Visual Editor</option>
-                      <option value={6}>Office Assistant</option>
+                      <option value={"Solidity Developer"}>Solidity Developer</option>
+                        <option value={"Graphics Designer"}>Graphics Designer</option>
+                        <option value={"Bitcoin Technology"}>Bitcoin Technology</option>
+                        <option value={"Web3 Developer"}>Web3 Developer</option>
+                        <option value={"Full Stack Developer"}>Full Stack Developer</option>
+                        <option value={"Blockchain Marketer"}>Blockchain Marketer</option>
+                        <option value={"Solution Architect"}>Solution Architect</option>
+                        <option value={"Project Manager"}>Project Manager</option>
                     </select>
                   </div>
                   <div className="col-lg-3">
@@ -71,78 +96,14 @@ const FindJobs = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus</p>
               </div>
               <div className="row">
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-wrench-and-screwdriver-in-cross" />
-                      <h3>Construction</h3>
-                      <p>6 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-accounting" />
-                      <h3>Finance</h3>
-                      <p>8 new Job</p>
-                    </div>
-                  </a>                  
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-heart" />
-                      <h3>Healthcare</h3>
-                      <p>9 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-computer-1" />
-                      <h3>Graphic Design</h3>
-                      <p>6 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-research" />
-                      <h3>Banking Jobs</h3>
-                      <p>5 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-worker" />
-                      <h3>Automotive</h3>
-                      <p>12 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-graduation-cap" />
-                      <h3>Education</h3>
-                      <p>15 new Job</p>
-                    </div>
-                  </a>
-                </div>
-                <div className="col-lg-3  col-sm-6">
-                  <a href="job-list.html">
-                    <div className="category-item">
-                      <i className="flaticon-computer" />
-                      <h3>Data Analysis</h3>
-                      <p>5 new Job</p>
-                    </div>
-                  </a>
-                </div>
+                <JobCategory category={'Solidity Developer'} numOfPost={"2"} />
+                <JobCategory category={'Blockchain Developer'} numOfPost={"2"} />
+                <JobCategory category={'Full Stack Developer'} numOfPost={"2"} />
+                <JobCategory category={'Project Manager'} numOfPost={"2"} />
+                <JobCategory category={'Blockchain Marketer'} numOfPost={"2"} />
+                <JobCategory category={'Graphics Designer'} numOfPost={"2"} />
+                <JobCategory category={'Solution Archetect'} numOfPost={"2"} />
+                <JobCategory category={'Bitcoin Technology'} numOfPost={"2"} />
               </div>
             </div>
           </div>
@@ -155,7 +116,9 @@ const FindJobs = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus</p>
               </div>
               <div className="row">
-                <div className="col-md-6">
+                {jobPostData?.map(jobpost=>{
+                  return(
+                      <div className="col-md-6" key={jobpost.id}>
                   <div className="job-card">
                     <div className="row align-items-center">
                       <div className="col-lg-3">
@@ -168,28 +131,28 @@ const FindJobs = () => {
                       <div className="col-lg-6">
                         <div className="job-info">
                           <h3>
-                            <a href="job-details.html">Post-Room Operate</a>
+                            <a href="job-details.html">{jobpost.job_title}</a>
                           </h3>
                           <ul>
-                            <li>Via <a href="link">Tourt Design LTD</a></li>
+                            <li>Via <a href="link">{jobpost.company_name}</a></li>
                             <li>
                               <i className="bx bx-location-plus" />
-                              Wellesley Rd, London
+                              {jobpost.company_location}, {jobpost.country}
                             </li>
                             <li>
                               <i className="bx bx-filter-alt" />
-                              Accountancy
+                              {jobpost.job_title}
                             </li>
                             <li>
                               <i className="bx bx-briefcase" />
-                              Freelance
+                              {jobpost.job_type}
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div className="col-lg-3">
                         <div className="job-save">
-                          <span>Full Time</span>
+                          
                           <a href="/like">
                             <i className="bx bx-heart" />
                           </a>
@@ -202,236 +165,10 @@ const FindJobs = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="job-card">
-                    <div className="row align-items-center">
-                      <div className="col-lg-3">
-                        <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/2.png" alt="company logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Data Entry</a>
-                          </h3>
-                          <ul>
-                            <li>Via <a href="link">Techno Inc.</a></li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Street 40/A, London
-                            </li>
-                            <li>
-                              <i className="bx bx-filter-alt" />
-                              Data Entry
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Freelance
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="job-save">
-                          <a href="/savejobs">
-                            <i className="bx bx-heart" />
-                          </a>
-                          <p>
-                            <i className="bx bx-stopwatch" />
-                            3 Hr Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="job-card">
-                    <div className="row align-items-center">
-                      <div className="col-lg-3">
-                        <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/3.png" alt="company logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Graphic Designer</a>
-                          </h3>
-                          <ul>
-                            <li>Via <a href="/link">Devon Design</a></li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              West Sight, USA
-                            </li>
-                            <li>
-                              <i className="bx bx-filter-alt" />
-                              Graphics
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Freelance
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="job-save">
-                          <a href="/link">
-                            <i className="bx bx-heart" />
-                          </a>
-                          <p>
-                            <i className="bx bx-stopwatch" />
-                            4 Hr Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="job-card">
-                    <div className="row align-items-center">
-                      <div className="col-lg-3">
-                        <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/4.png" alt="company logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Web Developer</a>
-                          </h3>
-                          <ul>
-                            <li>Via <a href="/link">MegaNews</a></li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              San Francisco, California
-                            </li>
-                            <li>
-                              <i className="bx bx-filter-alt" />
-                              Development
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Freelance
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="job-save">
-                          <a href="/link">
-                            <i className="bx bx-heart" />
-                          </a>
-                          <p>
-                            <i className="bx bx-stopwatch" />
-                            5 Hr Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="job-card">
-                    <div className="row align-items-center">
-                      <div className="col-lg-3">
-                        <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/5.png" alt="company logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">Digital Marketor</a>
-                          </h3>
-                          <ul>
-                            <li>Via <a href="/link">AB Marketer LTD</a></li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Wellesley Rd, London
-                            </li>
-                            <li>
-                              <i className="bx bx-filter-alt" />
-                              Marketing
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Freelance
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="job-save">
-                          <a href="/link">
-                            <i className="bx bx-heart" />
-                          </a>
-                          <p>
-                            <i className="bx bx-stopwatch" />
-                            6 Hr Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="job-card">
-                    <div className="row align-items-center">
-                      <div className="col-lg-3">
-                        <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/6.png" alt="company logo" />
-                          </a>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="job-info">
-                          <h3>
-                            <a href="job-details.html">UI/UX Designer</a>
-                          </h3>
-                          <ul>
-                            <li>Via <a href="link">Design Hunter</a></li>
-                            <li>
-                              <i className="bx bx-location-plus" />
-                              Zoo Rd, London
-                            </li>
-                            <li>
-                              <i className="bx bx-filter-alt" />
-                              Accountancy
-                            </li>
-                            <li>
-                              <i className="bx bx-briefcase" />
-                              Freelance
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="job-save">
-                          <a href="link">
-                            <i className="bx bx-heart" />
-                          </a>
-                          <p>
-                            <i className="bx bx-stopwatch" />
-                            8 Hr Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
+              
+              
               </div>
             </div>
           </section>

@@ -177,11 +177,14 @@ const PostJobs = () => {
                       onChange={formik.handleChange}
                       className="category">
                         <option data-display="Category">Category</option>
-                        <option value={"Web Development"}>Web Development</option>
-                        <option value={"Graphics Design"}>Graphics Design</option>
-                        <option value={"Data Entry"}>Data Entry</option>
-                        <option value={"Visual Editor"}>Visual Editor</option>
-                        <option value={"Office Assistant"}>Office Assistant</option>
+                        <option value={"Solidity Developer"}>Solidity Developer</option>
+                        <option value={"Graphics Designer"}>Graphics Designer</option>
+                        <option value={"Bitcoin Technology"}>Bitcoin Technology</option>
+                        <option value={"Web3 Developer"}>Web3 Developer</option>
+                        <option value={"Full Stack Developer"}>Full Stack Developer</option>
+                        <option value={"Blockchain Marketer"}>Blockchain Marketer</option>
+                        <option value={"Solution Architect"}>Solution Architect</option>
+                        <option value={"Project Manager"}>Project Manager</option>
                       </select>
                     </div>
                   </div>

@@ -14,12 +14,13 @@ import Blog from './components/pages/blog/Blog';
 import Contact from './components/pages/contact/Contact';
 import SignIn from './components/pages/auth/SignIn';
 import SignUp from './components/pages/auth/SignUp';
-import Account from './components/pages/accounts/Account';
+//import Account from './components/pages/accounts/Account';
 import Resume from './components/pages/accounts/Resume';
 import RecAccount from './components/pages/RecruiterAccount/RecAccount';
 import ApplyForJob from './components/pages/apply/ApplyForJob';
 import JobDetails from './components/pages/jobs/JobDetails'
 import LoginOption from './components/pages/auth/LoginOption';
+import { CandidiateAccount } from './components/context/ReducerContext';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
           <Route path="/contact-us" element={<Contact/>}/>
           <Route path="/sign-in" element={<SignIn/>}/>
           <Route path="/sign-up" element={<SignUp/>}/>
-          <Route path="/account" element={<Account/>}/>
+          <Route path="/account" element={<CandidiateAccount/>}/>
           <Route path="/resume" element={<Resume/>}/>
           <Route path="/apply/:canId" element={<ApplyForJob/>}/>
           <Route path="/recruiter-account" element={<RecAccount/>}/>

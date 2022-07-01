@@ -1,6 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
+import axios from 'axios'
 const Talents = () => {
+
+  const [candidiateProfile, setCandidiateProfile] = useState(null)
+  
+  const fetchCandidiateProfile = async()=>{
+    try {
+      const url = `${process.env.REACT_APP_API_URL}/server/getAllCandidiateProfile`;
+      const {data} = await axios.get(url)
+      console.log("CanInfo", data)
+      setCandidiateProfile(data.rows)
+    } catch (error) {
+      console.log("error getting recruiter info", error)
+    }
+   
+
+  }
+  
+
+  useEffect(() => {
+   
+      fetchCandidiateProfile();
+      
+   // eslint-disable-next-line
+  }, [])
   return (
     <>
      <div>
@@ -28,18 +53,20 @@ const Talents = () => {
           <section className="candidate-style-two pt-100 pb-70">
             <div className="container">
               <div className="row">
-                <div className="col-lg-3 col-sm-6">
+                {candidiateProfile?.map(profile=>{
+                  return(
+                     <div className="col-lg-3 col-sm-6" key={profile.walletAddress}>
                   <div className="candidate-card">
                     <div className="candidate-img">
-                      <img src="assets/img/candidate/1.jpg" alt="candidate" />
+                      <img src={`${process.env.REACT_APP_API_URL}/${profile?.photo}`} alt="candidate" />
                     </div>
                     <div className="candidate-text">
                       <h3>
-                        <a href="candidate-details.html">Mibraj Alex</a>
+                        <a href="candidate-details.html">{profile.name}</a>
                       </h3>
                       <ul>
                         <li>
-                          Web Developer
+                         {profile.job_title}
                         </li>
                       </ul>
                     </div>
@@ -50,160 +77,10 @@ const Talents = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/2.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Felica Kareon</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          PHP Developer
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/3.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Malisa Petel</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          Business Consultant
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/4.jpg" alt="candidatlink" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Quence Joes</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          Graphics Designer
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/5.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Mary Mainor</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          Technical Writter
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/6.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Jack Hallock</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          Marketing Expert
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/7.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Lucas Mason</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          UX Designer
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>  
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="candidate-card">
-                    <div className="candidate-img">
-                      <img src="assets/img/candidate/8.jpg" alt="candidate" />
-                    </div>
-                    <div className="candidate-text">
-                      <h3>
-                        <a href="candidate-details.html">Jerry Hudson</a>
-                      </h3>
-                      <ul>
-                        <li>
-                          Video Editor
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="candidate-social">
-                      <a href="link" target="_blank"><i className="bx bxl-facebook" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-twitter" /></a>
-                      <a href="link" target="_blank"><i className="bx bxl-linkedin" /></a>
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
+               
+             
               </div>
             </div>
           </section>

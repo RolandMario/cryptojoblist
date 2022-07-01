@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import {JobPostProvider} from './components/context/JobPostContext';
 import { PostDetailsProvider } from './components/context/PostDetailscontext';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -18,7 +19,10 @@ root.render(
           <SignInProvider>
             <JobPostProvider>
               <PostDetailsProvider>
+                
+
                 <App />  
+                
               </PostDetailsProvider>
               
             </JobPostProvider>

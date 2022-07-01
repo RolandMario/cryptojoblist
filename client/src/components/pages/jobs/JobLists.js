@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from  'axios'
 import { JobPostContext } from '../../context/JobPostContext'
 import {useNavigate} from 'react-router-dom'
-import { baseURL } from '../../constants/Constants'
+
 const JobLists = () => {
 
 let navigate = useNavigate();
@@ -15,7 +15,7 @@ const [jobPostData, setJobPostData] = useContext(JobPostContext)
 
 const getjobPosts = async()=>{
  
-  const url = `${baseURL}/api/recruiter/getAllJobPosts`;
+  const url = `${process.env.REACT_APP_API_URL}/server/getAllJobPosts`;
   const {data} = await axios.get(url)
  
   setJobPostData(data.rows)

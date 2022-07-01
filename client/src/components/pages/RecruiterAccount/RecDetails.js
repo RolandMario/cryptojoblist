@@ -1,12 +1,13 @@
 import React,{useContext, useEffect, useState} from 'react'
-import { baseURL } from '../../constants/Constants'
+
 import { WalletAddressContext } from '../../context/WalletAddressContext';
 import axios from 'axios'
 
+
 const RecDetails = (props) => {
   const [walletAddress, ] = useContext(WalletAddressContext)
-  const url = `${baseURL}/api/recruiter/totalJobPostByRecruiter?addr=${walletAddress}`;
-  const [totalPost, setTotalPost] = useState(1)
+  const url = `${process.env.REACT_APP_API_URL}/server/totalJobPostByRecruiter?addr=${walletAddress}`;
+  const [, setTotalPost] = useState(1)
 
   console.log("recinfos", props.data)
   const getTotalJobPosts = async()=>{     
@@ -50,7 +51,7 @@ const RecDetails = (props) => {
                         </li>
                         <li>
                           <i className="flaticon-location-pointer" />
-                          &nbsp; Los Angeles
+                          &nbsp; {props.data.city}, {props.data.country}
                         </li>
                       </ul>
                     </div>
@@ -58,7 +59,8 @@ const RecDetails = (props) => {
                   <div className="col-lg-4 col-md-5 col-sm-12 col-12">
                     <div className="jp_job_post_right_btn_wrapper jb_cover">
                       <div className="header_btn search_btn jb_cover">
-                        <a href="link">view profile</a>
+                        {/* <a href="link">view profile</a> */}
+                        <button onClick={()=>props.setRecAccountData('RecProfile')}>view profile</button>
                       </div>
                     </div>
                   </div>
@@ -71,7 +73,7 @@ const RecDetails = (props) => {
                   <i className="fas fa-book" />
                 </div>
                 <div className="emp_job_side_text">
-                  <h1>{totalPost}</h1>
+                  <h1>{props.jobApplicants?.count||0}</h1>
                   <p>job posted</p>
                 </div>
               </div>
@@ -104,7 +106,7 @@ const RecDetails = (props) => {
                   <i className="fas fa-envelope-open-text" />
                 </div>
                 <div className="emp_job_side_text">
-                  <h1>{0}</h1>
+                  <h1>{props.applicatns?.count||0}</h1>
                   <p>total applications</p>
                 </div>
               </div>
@@ -254,15 +256,17 @@ const RecDetails = (props) => {
                   <h1> recent applicants</h1>
                 </div>
                 <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
+                {props.applicatns?.rows?.map((application)=>{
+                  return(<>
+                  <div className="row" key={application.id}>
                     <div className="col-lg-8 col-md-7 col-sm-8 col-12">
                       <div className="jp_job_post_side_img">
                         <img src="images/rc1.png" alt="post_img" />
                       </div>
                       <div className="jp_job_post_right_cont">
-                        <h4>aradhya s.</h4>
+                        <h4>{application.name}</h4>
                         <ul>
-                          <li>app designer</li>
+                          <li>{application.jobposts.job_title}</li>
                         </ul>
                       </div>
                     </div>
@@ -274,73 +278,12 @@ const RecDetails = (props) => {
                       </div>
                     </div>
                   </div>
+                  
+                  </>)
+                 })}
+                  
                 </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-8 col-md-7 col-sm-8 col-12">
-                      <div className="jp_job_post_side_img">
-                        <img src="images/rc2.png" alt="post_img" />
-                      </div>
-                      <div className="jp_job_post_right_cont">
-                        <h4>akshay s.</h4>
-                        <ul>
-                          <li>app designer</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-5 col-sm-4 col-12">
-                      <div className="jp_job_post_right_btn_wrapper jb_cover">
-                        <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="link">send</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-8 col-md-7 col-sm-8 col-12">
-                      <div className="jp_job_post_side_img">
-                        <img src="images/rc3.png" alt="post_img" />
-                      </div>
-                      <div className="jp_job_post_right_cont">
-                        <h4>shruti s.</h4>
-                        <ul>
-                          <li>app designer</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-5 col-sm-4 col-12">
-                      <div className="jp_job_post_right_btn_wrapper jb_cover">
-                        <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="link">send</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-8 col-md-7 col-sm-8 col-12">
-                      <div className="jp_job_post_side_img">
-                        <img src="images/rc4.png" alt="post_img" />
-                      </div>
-                      <div className="jp_job_post_right_cont">
-                        <h4>simona A.</h4>
-                        <ul>
-                          <li>UI designer</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-5 col-sm-4 col-12">
-                      <div className="jp_job_post_right_btn_wrapper jb_cover">
-                        <div className="header_btn search_btn appbtn jb_cover">
-                          <a href="link">send</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
             <div className="col-lg-5 col-md-12 col-sm-12 col-12">

@@ -1,6 +1,9 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { AccountContext } from '../../context/AccountContext';
 import '../../styles/dashboard.css'
-const UserDashboard = () => {
+const UserDashboard = ({candidiateProfile, jobCount}) => {
+
+  const [, setAccountData] = useContext(AccountContext);
   return (
     
  <>
@@ -11,10 +14,10 @@ const UserDashboard = () => {
                 <div className="row">
                   <div className="col-lg-8 col-md-7 col-sm-12 col-12">
                     <div className="jp_job_post_side_img">
-                      <img src="images/pf1.jpg" alt="post_img" />
+                      <img src={`${process.env.REACT_APP_API_URL}/${candidiateProfile?.photo}`}  width='100px' height='100px' alt="post_img" />
                     </div>
                     <div className="jp_job_post_right_cont">
-                      <h4>luca wallace</h4>
+                      <h4>{candidiateProfile?.name}</h4>
                       <ul>
                         <li>
                           <i className="fas fa-suitcase" />
@@ -22,7 +25,7 @@ const UserDashboard = () => {
                         </li>
                         <li>
                           <i className="flaticon-location-pointer" />
-                          &nbsp; Los Angeles
+                          &nbsp; {candidiateProfile?.city}
                         </li>
                       </ul>
                     </div>
@@ -30,7 +33,8 @@ const UserDashboard = () => {
                   <div className="col-lg-4 col-md-5 col-sm-12 col-12">
                     <div className="jp_job_post_right_btn_wrapper jb_cover">
                       <div className="header_btn search_btn jb_cover">
-                        <a href="link">view profile</a>
+                        {/* <a href="link">view profile</a> */}
+                        <button onClick={()=>setAccountData('Profile')}> view profile</button>
                       </div>
                     </div>
                   </div>
@@ -50,7 +54,7 @@ const UserDashboard = () => {
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
                         <li>job description:</li>
-                        <li>Graphic Designer</li>
+                        <li>{candidiateProfile?.job_title}</li>
                       </ul>
                     </div>
                   </div>
@@ -61,7 +65,7 @@ const UserDashboard = () => {
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
                         <li>Location:</li>
-                        <li>Los Angeles Califonia PO</li>
+                        <li>{candidiateProfile?.city},{candidiateProfile?.country}</li>
                       </ul>
                     </div>
                   </div>
@@ -72,7 +76,7 @@ const UserDashboard = () => {
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
                         <li>phone:</li>
-                        <li>0145636941:</li>
+                        <li>{candidiateProfile?.phone}</li>
                       </ul>
                     </div>
                   </div>
@@ -84,7 +88,7 @@ const UserDashboard = () => {
                       <ul>
                         <li>email:</li>
                         <li>
-                          <a href="link">luca@example.com</a>
+                          <a href="link">{candidiateProfile?.email}</a>
                         </li>
                       </ul>
                     </div>
@@ -124,7 +128,7 @@ const UserDashboard = () => {
                       <i className="fas fa-book" />
                     </div>
                     <div className="emp_job_side_text">
-                      <h1>260</h1>
+                      <h1>{jobCount}</h1>
                       <p>applied jobs</p>
                     </div>
                   </div>
@@ -153,73 +157,7 @@ const UserDashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-              <div className="job_filter_category_sidebar jb_cover">
-                <div className="job_filter_sidebar_heading jb_cover">
-                  <h1> recent activity</h1>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Our Resume Updated!Dobrick published an article</h4>
-                        <ul>
-                          <li>5 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Dobrick published an article</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Someone bookmarked you</h4>
-                        <ul>
-                          <li>4 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Your Resume Updated!</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
  </>

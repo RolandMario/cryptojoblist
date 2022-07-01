@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+
 
 const Companies = () => {
+  
+  const [recData, setRecData] = useState([])
+
+  const url = `${process.env.REACT_APP_API_URL}/server/getCompanyProfile`;
+
+  const fetchRecruiterdetails = async()=>{     
+    try {
+     
+      const {data} = await axios.get(url)
+      
+      setRecData(data.rows)
+    } catch (error) {
+      console.log("error getting company info", error)
+    }
+   
+
+  }
+
+  useEffect(() => {
+    
+      fetchRecruiterdetails();
+      
+   // eslint-disable-next-line
+  }, [])
   return (
     <>
     <div>
@@ -33,158 +59,31 @@ const Companies = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
               </div>
               <div className="row">
-                <div className="col-lg-3 col-sm-6">
+                {recData?.map(companyData=>{
+                  return(
+                    <div className="col-lg-3 col-sm-6" key={companyData.walletAddress}>
                   <div className="company-card">
                     <div className="company-logo">
                       <a href="job-list.html">
-                        <img src="assets/img/top-company/1.png" alt="company logo" />
+                        <img src={`${process.env.REACT_APP_API_URL}/${companyData?.cover_logo}`} alt="company logo" />
                       </a>
                     </div>
                     <div className="company-text">
-                      <h3>Trophy  &amp; Sans</h3>
+                      <h3>{companyData.company_name}</h3>
                       <p>
                         <i className="bx bx-location-plus" />
-                        Green Lanes, London
+                        {companyData.city}, {companyData.country}
                       </p>
                       <a href="job-list.html" className="company-btn">
-                        25 Open Position
+                        View Company
                       </a>
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/2.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Trout Design</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Park Avenue, Mumbai
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        35 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/3.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Resland LTD</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Betas Quence, London
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        20 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/4.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Lawn Hopper</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Wellesley Rd, London
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        45 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/5.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Barkleys</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Hill Street, USA
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        18 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/6.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Benetton</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        View Point, USA
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        12 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/7.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Walmesh LTD</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Belfast, UK
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        20 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6">
-                  <div className="company-card">
-                    <div className="company-logo">
-                      <a href="job-list.html">
-                        <img src="assets/img/top-company/8.png" alt="company logo" />
-                      </a>
-                    </div>
-                    <div className="company-text">
-                      <h3>Relnet Industry</h3>
-                      <p>
-                        <i className="bx bx-location-plus" />
-                        Bristol, London
-                      </p>
-                      <a href="job-list.html" className="company-btn">
-                        21 Open Position
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
+                
+         
               </div>
               <nav aria-label="Page navigation example">
                 <ul className="pagination justify-content-center">
