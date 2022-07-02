@@ -8,7 +8,7 @@ const multer = require('multer')
 
 
 // router
-// const router = require('express').Router()
+const router = require('express').Router()
 
 // const storage = multer.diskStorage({
 //     destination: function(req, file, cb){
