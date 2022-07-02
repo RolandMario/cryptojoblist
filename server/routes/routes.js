@@ -8,16 +8,29 @@ const multer = require('multer')
 
 
 // router
-const router = require('express').Router()
+// const router = require('express').Router()
+
+// const storage = multer.diskStorage({
+//     destination: function(req, file, cb){
+        
+//         cb(null, path.resolve(__dirname, '/uploads/'));
+//     },
+//     filename: function(req, file, cb){
+//         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
+        
+//     }
+// })
 
 const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        
-        cb(null, path.resolve(__dirname, '/uploads/'));
+    destination: function(req,file,cb){
+        //if that dir is not created then this will create that dir first
+        fs.mkdir('./uploads/',(err)=>{
+            cb(null,'./uploads/');
+        })
     },
-    filename: function(req, file, cb){
-        cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
-        
+    filename: function(req,file,cb)
+    {
+        cb(null,new Date().toISOString().replace(/:/g, '-') +'-'+file.originalname);
     }
 })
 const upload = multer({
