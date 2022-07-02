@@ -18,7 +18,7 @@ const corsOptions ={
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/uploads', express.static('uploads'))
+app.use(express.static('uploads'))
 app.use('/resumes', express.static('resumes'))
 app.use('/photos', express.static('photos'))
 

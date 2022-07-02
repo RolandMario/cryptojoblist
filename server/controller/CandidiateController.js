@@ -6,7 +6,7 @@ const db = require('../models')
 
 
 // create main Model
- const Recruiter = db.recruiters;
+ 
 const JobPost = db.jobPosts;
 const Application = db.applications;
 const Candidiate = db.candidiates;
