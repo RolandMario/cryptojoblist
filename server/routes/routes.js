@@ -4,6 +4,7 @@ const applicationController = require('../controller/ApplicationController')
 const candidiateController = require('../controller/CandidiateController')
 const message = require('../controller/Message')
 const path = require('path')
+const fs = require('fs')
 const multer = require('multer')
 
 
