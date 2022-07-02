@@ -4,36 +4,36 @@ const applicationController = require('../controller/ApplicationController')
 const candidiateController = require('../controller/CandidiateController')
 const message = require('../controller/Message')
 const path = require('path')
-const fs = require('fs')
+// const fs = require('fs')
 const multer = require('multer')
 
 
 // router
 const router = require('express').Router()
 
-// const storage = multer.diskStorage({
-//     destination: function(req, file, cb){
-        
-//         cb(null, path.resolve(__dirname, '/uploads/'));
-//     },
-//     filename: function(req, file, cb){
-//         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
-        
-//     }
-// })
-
 const storage = multer.diskStorage({
-    destination: function(req,file,cb){
-        //if that dir is not created then this will create that dir first
-        fs.mkdir('./uploads/',(err)=>{
-            cb(null,'./uploads/');
-        })
+    destination: function(req, file, cb){
+        
+        cb(null, './uploads/')
     },
-    filename: function(req,file,cb)
-    {
-        cb(null,new Date().toISOString().replace(/:/g, '-') +'-'+file.originalname);
+    filename: function(req, file, cb){
+        cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
+        
     }
 })
+
+// const storage = multer.diskStorage({
+//     destination: function(req,file,cb){
+//         //if that dir is not created then this will create that dir first
+//         fs.mkdir('./uploads/',(err)=>{
+//             cb(null,'./uploads/');
+//         })
+//     },
+//     filename: function(req,file,cb)
+//     {
+//         cb(null,new Date().toISOString().replace(/:/g, '-') +'-'+file.originalname);
+//     }
+// })
 const upload = multer({
     storage: storage,
      limits:{
