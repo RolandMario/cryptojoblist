@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express')
 const cors = require('cors')
 //const router = require('./routes/routes.js')
-const path = require('path')
+
 const app = express()
 const fns = require('./routes/routes.js')
 
@@ -18,7 +18,7 @@ const corsOptions ={
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static('uploads'))
+app.use('/uploads', express.static('uploads'))
 app.use('/resumes', express.static('resumes'))
 app.use('/photos', express.static('photos'))
 
