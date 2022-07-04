@@ -1,13 +1,13 @@
-import React, {useContext} from 'react'
+import React, {useContext, useReducer} from 'react'
 import { useFormik, Formik } from 'formik';
 import axios from 'axios'
 import { WalletAddressContext } from '../../context/WalletAddressContext';
 
-
+import { initialState, recReducer } from '../../reducer/InsertDBReducer';
 const RecProfile = (props) => {
  
   const [walletAddress, ] = useContext(WalletAddressContext)
- 
+  const [state, dispatch] = useReducer(recReducer, initialState)
   
 
   const formik = useFormik({
@@ -37,7 +37,7 @@ const RecProfile = (props) => {
     },
     onSubmit: async(value)=>{
         console.log(value)
-        
+        dispatch({type: 'signup'})
         const url = `${process.env.REACT_APP_API_URL}/server/updateRecruiter`
 
         let formData = new FormData()
@@ -66,10 +66,11 @@ const RecProfile = (props) => {
       try {
         const {data} = await axios.put(url, formData)
         if(data){
-          console.log("updated successfully")
+          dispatch({type: 'succeed'})
         }
       } catch (error) {
         console.log("update errror", error)
+        dispatch({type: 'failure'})
         
       }
         
@@ -385,11 +386,7 @@ const RecProfile = (props) => {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 col-12">
               <div className="login_remember_box jb_cover">
-                <label className="control control--checkbox">
-                  Enable Two Step Verification Via Email
-                  <input type="checkbox" />
-                  <span className="control__indicator" />
-                </label>
+              <h4>{state.isLoading }{state.success}{state.failed}{state.existed}</h4> 
                 <div className="header_btn search_btn jb_cover">
                   <button  type='submit'>save changes</button>
                   

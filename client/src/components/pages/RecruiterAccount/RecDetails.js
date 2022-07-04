@@ -214,43 +214,10 @@ const RecDetails = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                  <div className="job_filter_category_sidebar jb_cover">
-                    <div className="job_filter_sidebar_heading jb_cover">
-                      <h1> social profile</h1>
-                    </div>
-                    <div className="job_overview_header jb_cover">
-                      <div className="jp_listing_left_bottom_sidebar_social_wrapper">
-                        <ul>
-                          <li />
-                          <li>
-                            <a href="link">
-                              <i className="fab fa-facebook-f" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="link">
-                              <i className="fab fa-twitter" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="link">
-                              <i className="fab fa-linkedin-in" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="link">
-                              <i className="fab fa-google-plus-g" />
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
-            <div className="col-lg-7 col-md-12 col-sm-12 col-12">
+            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
               <div className="job_filter_category_sidebar jb_cover">
                 <div className="job_filter_sidebar_heading jb_cover">
                   <h1> recent applicants</h1>
@@ -286,73 +253,7 @@ const RecDetails = (props) => {
               
               </div>
             </div>
-            <div className="col-lg-5 col-md-12 col-sm-12 col-12">
-              <div className="job_filter_category_sidebar jb_cover">
-                <div className="job_filter_sidebar_heading jb_cover">
-                  <h1> activity</h1>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Dobrick published an article</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Dobrick published an article</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Someone bookmarked you</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="job_overview_header apps_wrapper jb_cover">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-                      <div className="activity_app">
-                        <i className="fas fa-angle-right" />
-                      </div>
-                      <div className="activity_logos">
-                        <h4>Your Resume Updated!</h4>
-                        <ul>
-                          <li>2 hours ago</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
     </>

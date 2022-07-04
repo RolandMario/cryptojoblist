@@ -22,18 +22,7 @@ const storage = multer.diskStorage({
     }
 })
 
-// const storage = multer.diskStorage({
-//     destination: function(req,file,cb){
-//         //if that dir is not created then this will create that dir first
-//         fs.mkdir('./uploads/',(err)=>{
-//             cb(null,'./uploads/');
-//         })
-//     },
-//     filename: function(req,file,cb)
-//     {
-//         cb(null,new Date().toISOString().replace(/:/g, '-') +'-'+file.originalname);
-//     }
-// })
+
 const upload = multer({
     storage: storage,
      limits:{
@@ -43,7 +32,7 @@ const upload = multer({
 const resumeStorage = multer.diskStorage({
     destination: function(req, file, cb){
         
-        cb(null, path.resolve(__dirname, '/resumes/'));
+        cb(null, './resumes/')
     },
     filename: function(req, file, cb){
         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);
@@ -62,7 +51,7 @@ const resume = multer({
 const photoStorage = multer.diskStorage({
     destination: function(req, file, cb){
         
-        cb(null, path.resolve(__dirname, '/photos/'));
+        cb(null, './photos/')
     },
     filename: function(req, file, cb){
         cb(null, new Date().toISOString().replace(/:/g, '-')+ file.originalname);

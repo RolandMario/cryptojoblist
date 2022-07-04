@@ -11,6 +11,8 @@ const RecAccount = () => {
     const [recData, setRecData] = useState({})
    const [recJobsApplicantsData, setRecJobsApplicantsData] = useState(null)
    const [applications, setApplications] = useState(null)
+  
+
 
     const renderAccountComponents = ()=>{
         const Com = AccountComponents[recAccountData];
@@ -27,7 +29,7 @@ const RecAccount = () => {
     try {
      
       const {data} = await axios.get(url)
-      console.log("RecInfo", data)
+      console.log("RecInfos", data)
       setRecData(data)
     } catch (error) {
       console.log("error getting recruiter info", error)
@@ -84,7 +86,7 @@ const RecAccount = () => {
         <div className="col-lg-3 col-md-12 col-sm-12 col-12">
           <div className="emp_dashboard_sidebar jb_cover">
             <div className="emp_web_profile jb_cover">
-              <img src={`${process.env.REACT_APP_API_URL}/${recData.cover_logo}`} alt="post_img" />
+              <img src={`${process.env.REACT_APP_API_URL}/${recData?.cover_logo}`} alt="post_img" />
               <h4>{recData.company_name}</h4>
               <p>@{recData.username}</p>
               <div className="skills jb_cover">
@@ -115,14 +117,7 @@ const RecAccount = () => {
                     edit profile
                   </button>
                 </li>
-                <li>
-                  <button
-                  onClick={()=>setRecAccountData('CompanyPage')}
-                  >
-                    <i className="fas fa-file" />
-                    company page{" "}
-                  </button>
-                </li>
+               
                 <li>
                   <button 
                   onClick={()=>setRecAccountData('ManagedJobs')}

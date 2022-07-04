@@ -130,3 +130,13 @@ job_filter_category_sidebar jb_cover{
     height: 5%;
     margin-top: 10%;
 }
+
+.job-card .thumb-img {
+    border: 1px dashed #d9dbdf;
+    max-width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 80px;
+    background: #ffffff;
+    cursor: pointer;
+}

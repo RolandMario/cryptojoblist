@@ -1,11 +1,13 @@
 import React, {useContext} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { JobPostContext } from '../../context/JobPostContext'
 
 
 
 
 const FindJobs = () => {
+
+  let navigate = useNavigate()
 
   const [jobPostData,] = useContext(JobPostContext)
   const JobCategory = (props)=>{
@@ -123,9 +125,9 @@ const FindJobs = () => {
                     <div className="row align-items-center">
                       <div className="col-lg-3">
                         <div className="thumb-img">
-                          <a href="job-details.html">
-                            <img src="assets/img/company-logo/1.png" alt="company" />
-                          </a>
+                         
+                            <img onClick={()=>{navigate(`/job-details/${jobpost.id}`)}} alt="company" />
+                          
                         </div>
                       </div>
                       <div className="col-lg-6">

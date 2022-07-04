@@ -1,9 +1,9 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useState, useEffect, useReducer} from 'react'
 import { TalentH1, ImgUpload, Input, Form, FormWrapper, TextArea, Button } from './ApplyForJobElements'
 import { PostDetailsContext } from '../../context/PostDetailscontext'
 import { useFormik } from 'formik';
 import { WalletAddressContext } from '../../context/WalletAddressContext';
-
+import { initialState, recReducer } from '../../reducer/InsertDBReducer';
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
 const ApplyForJob = () => {
@@ -11,6 +11,7 @@ const ApplyForJob = () => {
   const [walletAddress, ] = useContext(WalletAddressContext)
   const [post, ] = useContext(PostDetailsContext)
   const [candidiateDetails, setCandidiateDetails] = useState({})
+  const [state, dispatch] = useReducer(recReducer, initialState)
 
   let canId = useParams()
   const getCandidiateDetails = async()=>{
@@ -48,7 +49,7 @@ const ApplyForJob = () => {
     },
     onSubmit: async(value)=>{
       console.log('working')
-
+      dispatch({type: 'signup'})
       const url = `${process.env.REACT_APP_API_URL}/server/submitApplication?postId=${post.id}`
 
         let formData = new FormData()
@@ -66,9 +67,11 @@ const ApplyForJob = () => {
           const {data} = await axios.post(url, formData)
           if(data){
             console.log("Application successfully submitted")
+            dispatch({type:'succeed'})
           }
         } catch (error) {
           console.log("update errror", error)
+          dispatch({type: 'failure'})
           
         }
     }
@@ -107,7 +110,8 @@ const ApplyForJob = () => {
         onChange={(event)=>{
           formik.setFieldValue('cv', event.target.files[0])}}/>
         </ImgUpload>
-        
+        <h4>{state.isLoading }{state.success}{state.failed}{state.existed}{state.jobPosting}</h4>
+                  
         
         <Button type="submit"> Submit </Button>
     

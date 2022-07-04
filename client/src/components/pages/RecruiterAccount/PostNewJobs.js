@@ -76,13 +76,14 @@ const PostNewJobs = () => {
           job_tag: "",
           salary: "",
           experience: "",
-          job_desc: ""
+          job_desc: "",
+          job_req: ""
     
         },
         onSubmit: async(values)=>{
           dispatch({type: "authenticate"})
          
-          const url = `${process.env.REACT_APP_API_URL}/server/addJobPost`
+          const url = `${process.env.REACT_APP_API_URL}/server/addJobPost?addr=${walletAddress}`
           
             let jobPostDetails = {
               "job_title":values.job_title,
@@ -96,6 +97,7 @@ const PostNewJobs = () => {
               "salary":values.salary,
               "experience": values.experience,
               "job_desc": values.job_desc,
+              "job_req": values.job_req,
               "walletAddress": walletAddress
               
             }
@@ -155,11 +157,14 @@ const PostNewJobs = () => {
                       onChange={formik.handleChange}
                       className="category">
                         <option data-display="Category">Category</option>
-                        <option value={"Web Development"}>Web Development</option>
-                        <option value={"Graphics Design"}>Graphics Design</option>
-                        <option value={"Data Entry"}>Data Entry</option>
-                        <option value={"Visual Editor"}>Visual Editor</option>
-                        <option value={"Office Assistant"}>Office Assistant</option>
+                        <option value={"Solidity Developer"}>Solidity Developer</option>
+                        <option value={"Graphics Designer"}>Graphics Designer</option>
+                        <option value={"Bitcoin Technology"}>Bitcoin Technology</option>
+                        <option value={"Web3 Developer"}>Web3 Developer</option>
+                        <option value={"Full Stack Developer"}>Full Stack Developer</option>
+                        <option value={"Blockchain Marketer"}>Blockchain Marketer</option>
+                        <option value={"Solution Architect"}>Solution Architect</option>
+                        <option value={"Project Manager"}>Project Manager</option>
                       </select>
                     </div>
                   </div>
@@ -233,6 +238,13 @@ const PostNewJobs = () => {
                       <label htmlFor="exampleFormControlTextarea1">Job Description</label>
                       <textarea name="job_desc" value={formik.values.job_desc} onChange={formik.handleChange} 
                       className="form-control description-area" id="exampleFormControlTextarea1" rows={6} placeholder="Job Description" required  />
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="form-group">
+                      <label htmlFor="exampleFormControlTextarea1">Job Requirements</label>
+                      <textarea name="job_req" value={formik.values.job_req} onChange={formik.handleChange} 
+                      className="form-control description-area" id="exampleFormControlTextarea1" rows={6} placeholder="Well formatted job requirements" required  />
                     </div>
                   </div>
                   <div className='postJobState'>

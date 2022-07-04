@@ -69,7 +69,7 @@ export const ReducerProvider =()=>{
         <ReducerContext.Provider value={{state, dispatch}}>
             {/* {props.children} */}
           <Account />
-
+            
         </ReducerContext.Provider>
     );
 

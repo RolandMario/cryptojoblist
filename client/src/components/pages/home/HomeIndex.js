@@ -67,11 +67,14 @@ useEffect(() => {
                        <div className="col-lg-3">
                          <select className="category">
                            <option data-display="Category">Category</option>
-                           <option value={1}>Web Development</option>
-                           <option value={2}>Graphics Design</option>
-                           <option value={4}>Data Entry</option>
-                           <option value={5}>Visual Editor</option>
-                           <option value={6}>Office Assistant</option>
+                           <option value={"Solidity Developer"}>Solidity Developer</option>
+                            <option value={"Graphics Designer"}>Graphics Designer</option>
+                            <option value={"Bitcoin Technology"}>Bitcoin Technology</option>
+                            <option value={"Web3 Developer"}>Web3 Developer</option>
+                            <option value={"Full Stack Developer"}>Full Stack Developer</option>
+                            <option value={"Blockchain Marketer"}>Blockchain Marketer</option>
+                            <option value={"Solution Architect"}>Solution Architect</option>
+                            <option value={"Project Manager"}>Project Manager</option>
                          </select>
                        </div>
                        <div className="col-lg-3">
