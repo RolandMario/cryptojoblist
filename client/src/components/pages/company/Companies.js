@@ -6,8 +6,10 @@ import axios from 'axios'
 const Companies = () => {
   
   const [recData, setRecData] = useState([])
+  const [pageNo, setPageNo] = useState(0)
+  const pages = [0, 1, 2, 3]
 
-  const url = `${process.env.REACT_APP_API_URL}/server/getCompanyProfile`;
+  const url = `${process.env.REACT_APP_API_URL}/server/getCompanyProfile?pageNo=${pageNo}`;
 
   const fetchRecruiterdetails = async()=>{     
     try {
@@ -92,9 +94,10 @@ const Companies = () => {
                       <i className="bx bx-chevrons-left bx-fade-left" />
                     </a>
                   </li>
-                  <li className="page-item"><a className="page-link" href="link">1</a></li>
-                  <li className="page-item"><a className="page-link active" href="link">2</a></li>
-                  <li className="page-item"><a className="page-link" href="link">3</a></li>
+                  {pages.map((item)=>{
+                     return(<li className="page-item"><button className="page-link" onClick={()=>setPageNo(item)} key={item}>{item}</button></li>)
+                 
+                  })}
                   <li className="page-item">
                     <a className="page-link" href="link">
                       <i className="bx bx-chevrons-right bx-fade-right" />

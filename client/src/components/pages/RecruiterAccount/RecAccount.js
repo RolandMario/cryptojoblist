@@ -9,7 +9,7 @@ const RecAccount = () => {
     const [recAccountData, setRecAccountData] = useContext(RecAccountContext);
     const [walletAddress, ] = useContext(WalletAddressContext)
     const [recData, setRecData] = useState({})
-   const [recJobsApplicantsData, setRecJobsApplicantsData] = useState(null)
+   const [recJobsApplicantsData, setRecJobsApplicantsData] = useState({})
    const [applications, setApplications] = useState(null)
   
 
@@ -38,7 +38,7 @@ const RecAccount = () => {
 
   }
 
-  const applicantsUrl = `${process.env.REACT_APP_API_URL}/server/recGetApplication?addr=${walletAddress}`
+  const applicantsUrl = `${process.env.REACT_APP_API_URL}/server/totalJobPostByRecruiter?addr=${walletAddress}`
 
   const fetchApplicants = async()=>{
     try {

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 //import { WalletAddressContext } from '../../context/WalletAddressContext'
 import axios from  'axios'
@@ -11,11 +11,12 @@ let navigate = useNavigate();
 
 //const [walletAddress, setWalletAddress] = useContext(WalletAddressContext)
 const [jobPostData, setJobPostData] = useContext(JobPostContext)
-
+const [pageNo, setPageNo] = useState(0)
+const pages = [0, 1, 2, 3]
 
 const getjobPosts = async()=>{
  
-  const url = `${process.env.REACT_APP_API_URL}/server/getAllJobPosts`;
+  const url = `${process.env.REACT_APP_API_URL}/server/getAllJobPosts?pageNo=${pageNo}`;
   const {data} = await axios.get(url)
  
   setJobPostData(data.rows)
@@ -28,7 +29,7 @@ useEffect(() => {
      getjobPosts()
   
   // eslint-disable-next-line
-     }, [])
+     }, [pageNo])
  
   return (
     <>
@@ -120,9 +121,10 @@ useEffect(() => {
                       <i className="bx bx-chevrons-left bx-fade-left" />
                     </a>
                   </li>
-                  <li className="page-item"><a className="page-link" href="link">1</a></li>
-                  <li className="page-item"><a className="page-link active" href="link">2</a></li>
-                  <li className="page-item"><a className="page-link" href="link">3</a></li>
+                  {pages.map((item)=>{
+                     return(<li className="page-item"><button className="page-link" onClick={()=>setPageNo(item)} key={item}>{item}</button></li>)
+                 
+                  })}
                   <li className="page-item">
                     <a className="page-link" href="link">
                       <i className="bx bx-chevrons-right bx-fade-right" />

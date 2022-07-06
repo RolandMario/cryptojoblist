@@ -90,7 +90,7 @@ useEffect(() => {
                         <Link to="about-us" className="nav-link">About</Link>
                       </li>
                       <li className="nav-item">
-                        <a href="link" className="nav-link dropdown-toggle">Jobs</a>
+                        <Link to="/find-job" className="nav-link dropdown-toggle">Jobs</Link>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/find-job" className="nav-link">Find A Job</Link>
@@ -105,7 +105,7 @@ useEffect(() => {
                         </ul>
                       </li>                
                       <li className="nav-item">
-                        <a href="link" className="nav-link dropdown-toggle">Talents</a>
+                        <Link to="/talents" className="nav-link dropdown-toggle">Talents</Link>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/talents" className="nav-link">Browse Talents</Link>
@@ -114,7 +114,7 @@ useEffect(() => {
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a href="link" className="nav-link dropdown-toggle">Companies</a>
+                        <Link to="/companies" className="nav-link dropdown-toggle">Companies</Link>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/companies" className="nav-link">Browse Companies</Link>
@@ -123,7 +123,7 @@ useEffect(() => {
                         </ul>
                       </li>
                       <li className="nav-item">
-                        <a href="link" className="nav-link dropdown-toggle">Blog</a>
+                        <Link to="/blog" className="nav-link dropdown-toggle">Blog</Link>
                         <ul className="dropdown-menu">
                           <li className="nav-item">
                             <Link to="/blog" className="nav-link">Crypto News</Link>

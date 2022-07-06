@@ -1,7 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Applications = ({applicatns}) => {
 
+
+  const OpenResume = (index)=>{
+    let path = `${process.env.REACT_APP_API_URL}/${applicatns.rows[index]?.cv}`
+    window.open(path)
+  }
   
   return (
     <>
@@ -19,7 +25,7 @@ const Applications = ({applicatns}) => {
             
               
              
-                {applicatns?.rows?.map((application)=>{ 
+                {applicatns?.rows?.map((application, index)=>{ 
            return (<>
            <div className="latest_job_box jb_cover" key={application.id}>
               
@@ -50,16 +56,23 @@ const Applications = ({applicatns}) => {
                 <div className="header_btn download_btn_wrapper jb_cover">
                   <ul>
                     <li>
-                      <a href="link">
-                        <i className="fas fa-file-download" />
-                        download Resume
-                      </a>
+                      <button onClick={()=>OpenResume(index)}>
+                        {/* <i className="fas fa-file-download" /> */}
+                        View Resume
+                      </button>
+                    </li>
+                    <li>
+                      <Link to="/projectAmount">
+                        {" "}
+                        <i className="fas fa-envelope" />
+                        Accepted
+                      </Link>
                     </li>
                     <li>
                       <a href="link">
                         {" "}
                         <i className="fas fa-envelope" />
-                        send
+                        Declined
                       </a>
                     </li>
                   </ul>

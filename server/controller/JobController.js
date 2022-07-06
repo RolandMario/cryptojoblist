@@ -12,11 +12,11 @@ const Application = db.applications;
 // main work
 
 const getAllJobs = async(req, res)=>{
+  let {pageNo} = req.query;
     try {
         const { count, rows } = await JobPost.findAndCountAll({
-            // where: {
-            //   jobpost_id: req.query.addr
-            // }
+            limit: 5,
+            offset: pageNo * 5
             
           });
 

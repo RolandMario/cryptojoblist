@@ -2,9 +2,24 @@ import React, {useContext, useEffect} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { JobPostContext } from '../../context/JobPostContext';
+import { Link } from 'react-router-dom';
 import OptionLogin from './OptionLogin';
 
 const HomeIndex = () => {
+
+  const HomeCategory = ({cat, num})=>{
+    return (
+       <div className="col-lg-3 col-md-4 col-sm-6">
+          <Link to="/job-lists">
+            <div className="category-card">
+              <i className="flaticon-accounting" />
+              <h3>{cat}</h3>
+              <p>{num}-open position</p>
+            </div>
+          </Link>
+       </div>
+    )
+  }
 
   let navigate = useNavigate();
 
@@ -98,78 +113,14 @@ useEffect(() => {
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices.</p>
                </div>
                <div className="row">
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-accounting" />
-                       <h3>Solidity Developer</h3>
-                       <p>301 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-graduation-cap" />
-                       <h3>Web3 Developer</h3>
-                       <p>210 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-wrench-and-screwdriver-in-cross" />
-                       <h3>Full Stack Developer</h3>
-                       <p>281 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-consultation" />
-                       <h3>Bitcoin Technology</h3>
-                       <p>122 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-heart" />
-                       <h3>Blockchain Marketer</h3>
-                       <p>335 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3  col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-computer" />
-                       <h3> Web Designer :</h3>
-                       <p>401 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3  col-md-4 col-sm-6 offset-md-2 offset-lg-0">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-worker" />
-                       <h3>Solution Architect</h3>
-                       <p>100 open position</p>
-                     </div>
-                   </a>
-                 </div>
-                 <div className="col-lg-3 col-md-4 col-sm-6">
-                   <a href="job-list.html">
-                     <div className="category-card">
-                       <i className="flaticon-auction" />
-                       <h3>Project manager </h3>
-                       <p>201 open position</p>
-                     </div>
-                   </a>
-                 </div>
+                 <HomeCategory cat={"Solidity Developer"} num={0}/>
+                 <HomeCategory cat={"Web3 Developer"} num={0}/>
+                 <HomeCategory cat={"Full Stack Developer"} num={0}/>
+                 <HomeCategory cat={"Bitcoin Technology"} num={0}/>
+                 <HomeCategory cat={"Blockchain Marketer"} num={0}/>
+                <HomeCategory cat={"Graphics Designer"} num={0}/>
+                 <HomeCategory cat={"Solution Architect"} num={0}/>
+                 <HomeCategory cat={"Project Manager"} num={0}/>
                </div>
              </div>
            </section>

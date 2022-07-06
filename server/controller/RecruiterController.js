@@ -161,7 +161,11 @@ const getCandidiateByQuery = async(req, res)=>{
  }
 
  const getCompanyProfile = async(req, res)=>{
-  const { count, rows }  = await Recruiter.findAndCountAll({});
+  let {pageNo} = req.query;
+  const { count, rows }  = await Recruiter.findAndCountAll({
+    limit: 10,
+    offset: pageNo * 10
+  });
 
   res.status(200).send({count, rows})
  }

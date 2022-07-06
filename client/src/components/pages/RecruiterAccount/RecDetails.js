@@ -2,6 +2,7 @@ import React,{useContext, useEffect, useState} from 'react'
 
 import { WalletAddressContext } from '../../context/WalletAddressContext';
 import axios from 'axios'
+import Rechart from './Rechart';
 
 
 const RecDetails = (props) => {
@@ -118,7 +119,7 @@ const RecDetails = (props) => {
                 </div>
                 <div className="job_overview_header jb_cover">
                   <div className="sales-chart">
-                    <canvas id="team-chart" />
+                    <Rechart/>
                   </div>
                 </div>
               </div>
@@ -131,7 +132,7 @@ const RecDetails = (props) => {
                 <div className="job_overview_header jb_cover">
                   <div className="jp_listing_overview_list_main_wrapper jb_cover">
                     <div className="jp_listing_list_icon">
-                      <i className="far fa-calendar" />
+                    <i className="bx bxs-envelope" />
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
@@ -142,7 +143,7 @@ const RecDetails = (props) => {
                   </div>
                   <div className="jp_listing_overview_list_main_wrapper jb_cover">
                     <div className="jp_listing_list_icon">
-                      <i className="fas fa-map-marker-alt" />
+                    <i className="bx bx-location-plus" />
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
@@ -153,7 +154,7 @@ const RecDetails = (props) => {
                   </div>
                   <div className="jp_listing_overview_list_main_wrapper jb_cover">
                     <div className="jp_listing_list_icon">
-                      <i className="fa fa-info-circle" />
+                    <i className="bx bxs-phone" />
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>
@@ -164,7 +165,7 @@ const RecDetails = (props) => {
                   </div>
                   <div className="jp_listing_overview_list_main_wrapper jb_cover">
                     <div className="jp_listing_list_icon">
-                      <i className="fas fa-envelope" />
+                    <i className="bx bxs-envelope" />
                     </div>
                     <div className="jp_listing_list_icon_cont_wrapper">
                       <ul>

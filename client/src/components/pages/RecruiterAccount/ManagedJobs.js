@@ -26,7 +26,7 @@ const ManagedJobs = ({jobApplicants}) => {
                 <h6>action</h6>
               </div>
             </div>
-            {jobApplicants?.map((jobApplicant)=>{
+            {jobApplicants.rows?.map((jobApplicant)=>{
               return(<div className="latest_job_box jb_cover" key={jobApplicant.id}>
               <div className="job_list">
                 <h6>

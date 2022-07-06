@@ -5,10 +5,12 @@ import axios from 'axios'
 const Talents = () => {
 
   const [candidiateProfile, setCandidiateProfile] = useState(null)
+  const [pageNo, setPageNo] = useState(0)
+const pages = [0, 1, 2, 3]
   
   const fetchCandidiateProfile = async()=>{
     try {
-      const url = `${process.env.REACT_APP_API_URL}/server/getAllCandidiateProfile`;
+      const url = `${process.env.REACT_APP_API_URL}/server/getAllCandidiateProfile?pageNo=${pageNo}`;
       const {data} = await axios.get(url)
       console.log("CanInfo", data)
       setCandidiateProfile(data.rows)
@@ -84,6 +86,24 @@ const Talents = () => {
               </div>
             </div>
           </section>
+          <nav aria-label="Page navigation example">
+                <ul className="pagination justify-content-center">
+                  <li className="page-item disabled">
+                    <a className="page-link" href="link" tabIndex={-1} aria-disabled="true">
+                      <i className="bx bx-chevrons-left bx-fade-left" />
+                    </a>
+                  </li>
+                  {pages.map((item)=>{
+                     return(<li className="page-item"><button className="page-link" onClick={()=>setPageNo(item)} key={item}>{item}</button></li>)
+                 
+                  })}
+                  <li className="page-item">
+                    <a className="page-link" href="link">
+                      <i className="bx bx-chevrons-right bx-fade-right" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
           {/* Candidates Section End */}
           {/* Subscribe Section Start */}
           <section className="subscribe-section">

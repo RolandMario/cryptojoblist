@@ -63,8 +63,12 @@ const updateCandidiateProfile = async(req, res)=>{
  }
 
  const getAllCandidiateProfile = async(req, res)=>{
+  let {pageNo} = req.query;
   try {
-    const { count, rows } = await Candidiate.findAndCountAll({})
+    const { count, rows } = await Candidiate.findAndCountAll({
+      limit: 10,
+      offset: pageNo * 10
+    })
 
     res.status(200).send({count, rows})
   } catch (error) {

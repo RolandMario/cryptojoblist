@@ -15,7 +15,8 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4",
-    "web3": "^1.7.3"
+    "web3": "^1.7.3",
+    "recharts": "^2.1.9"
   },
   "scripts": {
     "start": "react-app-rewired start",

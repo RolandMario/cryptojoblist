@@ -42,7 +42,7 @@ db.applications = require('./Application.js')(sequelize, DataTypes)
 //     console.log('yes re-sync done!')
 // })
 
-db.sequelize.sync({force: true})
+db.sequelize.sync({force: false})
 .then(()=>console.log('yes resync done!'))
 // 1 to Many Relation
 
